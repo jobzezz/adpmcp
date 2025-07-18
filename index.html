@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assembleia de Deus Pentecostal - Ministério Comunhão e Plenitude</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+        
+        :root {
+            --primary: #1a365d;
+            --secondary: #d69e2e;
+            --accent: #4a5568;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1435527173128-983b87201f4d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .sermon-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .sermon-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .event-card {
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: var(--primary);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .verse-bg {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-145242182224-0a842f4f1d6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full z-50 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-cross text-white text-2xl mr-2"></i>
+                <span class="title-font text-white text-xl font-bold">ADP - Comunhão e Plenitude</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-white hover:text-yellow-300 transition">Início</a>
+                <a href="#about" class="text-white hover:text-yellow-300 transition">Sobre</a>
+                <a href="#ministries" class="text-white hover:text-yellow-300 transition">Ministérios</a>
+                <a href="#events" class="text-white hover:text-yellow-300 transition">Eventos</a>
+                <a href="#contact" class="text-white hover:text-yellow-300 transition">Contato</a>
+            </div>
+            <button class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden md:hidden fixed inset-0 bg-gray-900 bg-opacity-90 z-40 pt-20">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex flex-col space-y-6 text-center">
+                <a href="#home" class="text-white text-xl hover:text-yellow-300 transition">Início</a>
+                <a href="#about" class="text-white text-xl hover:text-yellow-300 transition">Sobre</a>
+                <a href="#ministries" class="text-white text-xl hover:text-yellow-300 transition">Ministérios</a>
+                <a href="#events" class="text-white text-xl hover:text-yellow-300 transition">Eventos</a>
+                <a href="#contact" class="text-white text-xl hover:text-yellow-300 transition">Contato</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero min-h-screen flex items-center justify-center text-white pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="title-font text-4xl md:text-6xl font-bold mb-6">Assembleia de Deus Pentecostal</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-8">Ministério Comunhão e Plenitude</h2>
+            <p class="text-xl mb-12 max-w-3xl mx-auto">Uma igreja onde você pode encontrar comunhão com Deus e com os irmãos, e experimentar a plenitude do Espírito Santo.</p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="#about" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Conheça-nos</a>
+                <a href="#events" class="border-2 border-white hover:bg-white hover:bg-opacity-20 text-white font-bold py-3 px-8 rounded-full transition duration-300">Próximos Eventos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nossa História</h2>
+                <div class="w-24 h-1 bg-yellow-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1541418950054-c12804e149d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Igreja" class="rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="title-font text-2xl font-bold text-gray-800 mb-4">Quem Somos</h3>
+                    <p class="text-gray-600 mb-6">A Assembleia de Deus Pentecostal - Ministério Comunhão e Plenitude foi fundada em 1995 com o propósito de levar o evangelho pentecostal com poder e unção do Espírito Santo. Nossa missão é promover a comunhão entre os irmãos e ajudar cada crente a alcançar a plenitude em Cristo.</p>
+                    <p class="text-gray-600 mb-6">Nossa igreja é parte da Convenção Nacional das Assembleias de Deus no Brasil e mantém os princípios doutrinários históricos do movimento pentecostal.</p>
+                    <div class="flex items-center">
+                        <div class="mr-4">
+                            <i class="fas fa-cross text-yellow-600 text-3xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Nossa Visão</h4>
+                            <p class="text-gray-600">Ser uma igreja relevante que impacta vidas através do poder do Espírito Santo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bible Verse Section -->
+    <section class="verse-bg py-20 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <i class="fas fa-quote-left text-yellow-300 text-4xl mb-6"></i>
+            <p class="text-xl md:text-2xl italic mb-6">"Mas aquele que beber da água que eu lhe der nunca terá sede, porque a água que eu lhe der se fará nele uma fonte de água que salte para a vida eterna."</p>
+            <p class="font-bold">João 4:14</p>
+        </div>
+    </section>
+
+    <!-- Ministries Section -->
+    <section id="ministries" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nossos Ministérios</h2>
+                <div class="w-24 h-1 bg-yellow-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Ministry 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-yellow-600 mb-4">
+                        <i class="fas fa-music text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Louvor e Adoração</h3>
+                    <p class="text-gray-600">Nosso ministério de louvor busca levar a congregação a uma experiência genuína de adoração ao Senhor através da música.</p>
+                </div>
+                
+                <!-- Ministry 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-yellow-600 mb-4">
+                        <i class="fas fa-child text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Ministério Infantil</h3>
+                    <p class="text-gray-600">Cuidamos e ensinamos as crianças nos caminhos do Senhor com atividades criativas e ensino bíblico relevante.</p>
+                </div>
+                
+                <!-- Ministry 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-yellow-600 mb-4">
+                        <i class="fas fa-hands-praying text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Intercessão</h3>
+                    <p class="text-gray-600">Grupo dedicado à oração por necessidades específicas da igreja, da comunidade e do mundo.</p>
+                </div>
+                
+                <!-- Ministry 4 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-yellow-600 mb-4">
+                        <i class="fas fa-people-group text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Jovens</h3>
+                    <p class="text-gray-600">Ministério voltado para jovens, com encontros semanais, estudos bíblicos e eventos especiais.</p>
+                </div>
+                
+                <!-- Ministry 5 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-yellow-600 mb-4">
+                        <i class="fas fa-hands-holding-child text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Ação Social</h3>
+                    <p class="text-gray-600">Atendemos famílias carentes da comunidade com alimentos, roupas e assistência espiritual.</p>
+                </div>
+                
+                <!-- Ministry 6 -->
+                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="text-yellow-600 mb-4">
+                        <i class="fas fa-bible text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Escola Bíblica</h3>
+                    <p class="text-gray-600">Cursos e estudos sistemáticos da Bíblia para aprofundamento na fé e conhecimento das Escrituras.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sermons Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Mensagens Recentes</h2>
+                <div class="w-24 h-1 bg-yellow-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sermon 1 -->
+                <div class="sermon-card bg-gray-50 rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1501281330705-5fc15124610b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Sermon" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <a href="#" class="bg-yellow-600 hover:bg-yellow-700 text-white rounded-full p-4">
+                                <i class="fas fa-play text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm text-yellow-600">12/06/2023</span>
+                        <h3 class="text-xl font-bold text-gray-800 my-2">O Poder da Comunhão</h3>
+                        <p class="text-gray-600 mb-4">Pr. João Silva</p>
+                        <a href="#" class="text-yellow-600 font-semibold hover:text-yellow-700 transition">Assistir mensagem <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Sermon 2 -->
+                <div class="sermon-card bg-gray-50 rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-145242182224-0a842f4f1d6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Sermon" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <a href="#" class="bg-yellow-600 hover:bg-yellow-700 text-white rounded-full p-4">
+                                <i class="fas fa-play text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm text-yellow-600">05/06/2023</span>
+                        <h3 class="text-xl font-bold text-gray-800 my-2">Vivendo em Plenitude</h3>
+                        <p class="text-gray-600 mb-4">Pr. Marcos Oliveira</p>
+                        <a href="#" class="text-yellow-600 font-semibold hover:text-yellow-700 transition">Assistir mensagem <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Sermon 3 -->
+                <div class="sermon-card bg-gray-50 rounded-lg overflow-hidden shadow-md">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1437651025703-2858c944e3eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Sermon" class="w-full h-48 object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <a href="#" class="bg-yellow-600 hover:bg-yellow-700 text-white rounded-full p-4">
+                                <i class="fas fa-play text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm text-yellow-600">29/05/2023</span>
+                        <h3 class="text-xl font-bold text-gray-800 my-2">O Batismo no Espírito Santo</h3>
+                        <p class="text-gray-600 mb-4">Pr. João Silva</p>
+                        <a href="#" class="text-yellow-600 font-semibold hover:text-yellow-700 transition">Assistir mensagem <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white font-bold py-3 px-8 rounded-full transition duration-300">Ver Todas as Mensagens</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Próximos Eventos</h2>
+                <div class="w-24 h-1 bg-yellow-600 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Event 1 -->
+                <div class="event-card bg-white p-6 mb-6 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="bg-yellow-600 text-white text-center py-3 rounded">
+                                <div class="text-2xl font-bold">18</div>
+                                <div class="text-sm">JUN</div>
+                                <div class="text-sm">2023</div>
+                            </div>
+                        </div>
+                        <div class="md:w-3/4 md:pl-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Culto de Avivamento</h3>
+                            <p class="text-gray-600 mb-3">Um tempo especial de busca pelo poder e unção do Espírito Santo. Traga sua família e amigos para essa experiência transformadora.</p>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-clock mr-2 text-yellow-600"></i>
+                                <span class="mr-4">19:30h</span>
+                                <i class="fas fa-map-marker-alt mr-2 text-yellow-600"></i>
+                                <span>Templo Principal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="event-card bg-white p-6 mb-6 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="bg-yellow-600 text-white text-center py-3 rounded">
+                                <div class="text-2xl font-bold">24</div>
+                                <div class="text-sm">JUN</div>
+                                <div class="text-sm">2023</div>
+                            </div>
+                        </div>
+                        <div class="md:w-3/4 md:pl-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Retiro de Jovens</h3>
+                            <p class="text-gray-600 mb-3">Um fim de semana de muito louvor, palavra e comunhão para os jovens da nossa igreja e convidados.</p>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-clock mr-2 text-yellow-600"></i>
+                                <span class="mr-4">08:00h (sábado)</span>
+                                <i class="fas fa-map-marker-alt mr-2 text-yellow-600"></i>
+                                <span>Sítio Vale da Benção</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="event-card bg-white p-6 mb-6 rounded-lg shadow-md">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/4 mb-4 md:mb-0">
+                            <div class="bg-yellow-600 text-white text-center py-3 rounded">
+                                <div class="text-2xl font-bold">02</div>
+                                <div class="text-sm">JUL</div>
+                                <div class="text-sm">2023</div>
+                            </div>
+                        </div>
+                        <div class="md:w-3/4 md:pl-6">
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Santa Ceia</h3>
+                            <p class="text-gray-600 mb-3">Celebração especial da Santa Ceia do Senhor. Todos os membros em comunhão estão convidados a participar.</p>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-clock mr-2 text-yellow-600"></i>
+                                <span class="mr-4">19:00h</span>
+                                <i class="fas fa-map-marker-alt mr-2 text-yellow-600"></i>
+                                <span>Templo Principal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <a href="#" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Ver Calendário Completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="title-font text-3xl md:text-4xl font-bold text-gray-800 mb-4">Entre em Contato</h2>
+                <div class="w-24 h-1 bg-yellow-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Informações</h3>
+                    
+                    <div class="mb-8">
+                        <h4 class="font-bold text-gray-800 mb-2">Endereço</h4>
+                        <p class="text-gray-600">Rua da Comunhão, 123 - Bairro Plenitude</p>
+                        <p class="text-gray-600">Cidade - Estado</p>
+                        <p class="text-gray-600">CEP: 12345-678</p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="font-bold text-gray-800 mb-2">Horários de Culto</h4>
+                        <p class="text-gray-600"><span class="font-semibold">Domingo:</span> Escola Bíblica - 09:00h | Culto - 19:00h</p>
+                        <p class="text-gray-600"><span class="font-semibold">Quarta-feira:</span> Culto de Oração - 19:30h</p>
+                        <p class="text-gray-600"><span class="font-semibold">Sexta-feira:</span> Culto de Jovens - 20:00h</p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h4 class="font-bold text-gray-800 mb-2">Contatos</h4>
+                        <p class="text-gray-600 mb-2"><i class="fas fa-phone-alt text-yellow-600 mr-2"></i> (00) 1234-5678</p>
+                        <p class="text-gray-600"><i class="fas fa-envelope text-yellow-600 mr-2"></i> contato@comunhaoeplenitude.com.br</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-bold text-gray-800 mb-4">Redes Sociais</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="bg-green-600 text-white p-3 rounded-full hover:bg-green-700 transition">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Envie uma Mensagem</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 mb-2">Nome</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 mb-2">Telefone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-700 mb-2">Assunto</label>
+                            <select id="subject" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600">
+                                <option value="">Selecione um assunto</option>
+                                <option value="prayer">Pedido de Oração</option>
+                                <option value="visit">Visitação Pastoral</option>
+                                <option value="membership">Membresia</option>
+                                <option value="other">Outro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 mb-2">Mensagem</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-yellow-600"></textarea>
+                        </div>
+                        <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded transition duration-300">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12345.678901234567!2d-46.12345678901234!3d-23.123456789012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDA3JzI0LjQiUyA0NsKwMDcnMjQuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0 md:w-1/3">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-cross text-yellow-600 text-2xl mr-2"></i>
+                        <span class="title-font text-xl font-bold">ADP - Comunhão e Plenitude</span>
+                    </div>
+                    <p class="text-gray-400">Uma igreja onde você pode encontrar comunhão com Deus e com os irmãos, e experimentar a plenitude do Espírito Santo.</p>
+                </div>
+                
+                <div class="mb-8 md:mb-0 md:w-1/3 md:px-6">
+                    <h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-yellow-600 transition">Início</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-yellow-600 transition">Sobre Nós</a></li>
+                        <li><a href="#ministries" class="text-gray-400 hover:text-yellow-600 transition">Ministérios</a></li>
+                        <li><a href="#events" class="text-gray-400 hover:text-yellow-600 transition">Eventos</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-yellow-600 transition">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:w-1/3">
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Assine nossa newsletter para receber notícias e atualizações.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu email" class="px-4 py-2 w-full rounded-l focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-yellow-600 hover:bg-yellow-700 px-4 rounded-r">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Assembleia de Deus Pentecostal - Ministério Comunhão e Plenitude. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-yellow-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('button').addEventListener('click', function() {
+            document.querySelector('.mobile-menu').classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('.mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled', 'bg-blue-900');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('scrolled', 'bg-blue-900');
+                navbar.classList.add('bg-transparent');
+            }
+
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+
+        // Back to top functionality
+        document.AgetElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
