@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADPMCP - Igreja da Oração, da Palavra e da Comunhão</title>
+    <title>ADP MCP - Seja bem-vindo à família Plenitude</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>
         tailwind.config = {
             theme: {
@@ -23,7 +23,7 @@
     </script>
     <style>
         .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('blob:https://adpmcp-my.sharepoint.com/0c711e6b-817a-4573-881c-d5d8af21b31c');
             background-size: cover;
             background-position: center;
         }
@@ -68,15 +68,25 @@
                 </div>
             </div>
             
-            <div class="hidden md:flex space-x-6">
-                <a href="#inicio" class="nav-link text-white hover:text-secondary transition">Início</a>
-                <a href="#ministerios" class="nav-link text-white hover:text-secondary transition">Ministérios</a>
-                <a href="#fundadores" class="nav-link text-white hover:text-secondary transition">Fundadores</a>
-                <a href="#cruzada" class="nav-link text-white hover:text-secondary transition">Cruzada Cristo Vive</a>
-                <a href="#livraria" class="nav-link text-white hover:text-secondary transition">Livraria</a>
-                <a href="#projetos" class="nav-link text-white hover:text-secondary transition">Projectos Sociais</a>
-                <a href="#staff" class="nav-link text-white hover:text-secondary transition">Staff</a>
-            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="/ministerios.html" class="nav-link text-white hover:text-secondary transition flex items-center">
+                    <i class="fas fa-users mr-1"></i> Ministérios
+                </a>
+                <a href="/fundadores.html" class="nav-link text-white hover:text-secondary transition flex items-center">
+                    <i class="fas fa-user-tie mr-1"></i> Fundadores
+                </a>
+                <a href="/cristovive.html" class="nav-link text-white hover:text-secondary transition flex items-center">
+                    <i class="fas fa-cross mr-1"></i> Cruzada Evangelística
+                </a>
+                <a href="/livraria.html" class="nav-link text-white hover:text-secondary transition flex items-center">
+                    <i class="fas fa-book mr-1"></i> Livraria
+                </a>
+                <a href="/projetos.html" class="nav-link text-white hover:text-secondary transition flex items-center">
+                    <i class="fas fa-hands-helping mr-1"></i> Projectos Sociais
+                </a>
+
+                </a>
+            </nav>
             
             <button class="md:hidden text-white focus:outline-none">
                 <i class="fas fa-bars text-2xl"></i>
@@ -85,23 +95,29 @@
     </header>
 
     <!-- Mobile Menu -->
-    <div class="md:hidden bg-primary text-white hidden" id="mobileMenu">
-        <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
-            <a href="#inicio" class="nav-link py-2 border-b border-gray-700">Início</a>
-            <a href="#ministerios" class="nav-link py-2 border-b border-gray-700">Ministérios</a>
-            <a href="#fundadores" class="nav-link py-2 border-b border-gray-700">Fundadores</a>
-            <a href="#cruzada" class="nav-link py-2 border-b border-gray-700">Cruzada Cristo Vive</a>
-            <a href="#livraria" class="nav-link py-2 border-b border-gray-700">Livraria</a>
-            <a href="#projetos" class="nav-link py-2 border-b border-gray-700">Projectos Sociais</a>
-            <a href="#staff" class="nav-link py-2">Staff</a>
-        </div>
-    </div>
+    <nav id="mobileMenu" class="md:hidden hidden bg-primary text-white px-4 py-4">
+        <a href="/ministerios.html" class="block py-2 nav-link hover:text-secondary transition flex items-center">
+            <i class="fas fa-users mr-1"></i> Ministérios
+        </a>
+        <a href="/fundadores.html" class="block py-2 nav-link hover:text-secondary transition flex items-center">
+            <i class="fas fa-user-tie mr-1"></i> Fundadores
+        </a>
+        <a href="/cristovive.html" class="block py-2 nav-link hover:text-secondary transition flex items-center">
+            <i class="fas fa-cross mr-1"></i> Cruzada Evangelística
+        </a>
+        <a href="/livraria.html" class="block py-2 nav-link hover:text-secondary transition flex items-center">
+            <i class="fas fa-book mr-1"></i> Livraria
+        </a>
+        <a href="/projetos.html" class="block py-2 nav-link hover:text-secondary transition flex items-center">
+            <i class="fas fa-hands-helping mr-1"></i> Projectos Sociais
+        </a>
+    </nav>
 
     <!-- Hero Section -->
     <section id="inicio" class="hero-bg text-white py-20 md:py-32">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Assembleia de Deus Pentecostal</h1>
-            <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-secondary">Ministério Comunhão e Plenitude</h2>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Assembleia de Deus Pentecostal</h2>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-secondary">Ministério Comunhão e Plenitude</h1>
             <p class="text-xl mb-8 max-w-2xl mx-auto">"A igreja da oração, da palavra e da comunhão"</p>
             
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
