@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADP MCP - Seja bem-vindo à família Plenitude</title>
+    <title>Home. - ADPMCP</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>
@@ -57,7 +57,7 @@
         </a>
     </div>
 
-    <!-- Header -->
+      <!-- Header -->
     <header class="bg-primary text-white shadow-md">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-2">
@@ -67,15 +67,18 @@
                     <p class="text-xs">Igreja da Oração, da Palavra e da Comunhão</p>
                 </div>
             </div>
-            
-            <nav class="hidden md:flex space-x-6">
-                <a href="/ministerios.html" class="nav-link text-white hover:text-secondary transition flex items-center">
+
+            <nav_bar class="hidden md:flex space-x-6">
+                <a href="/ministerios.html"
+                    class="nav-link text-white hover:text-secondary transition flex items-center">
                     <i class="fas fa-users mr-1"></i> Ministérios
                 </a>
-                <a href="/fundadores.html" class="nav-link text-white hover:text-secondary transition flex items-center">
+                <a href="/fundadores.html"
+                    class="nav-link text-white hover:text-secondary transition flex items-center">
                     <i class="fas fa-user-tie mr-1"></i> Fundadores
                 </a>
-                <a href="/cristovive.html" class="nav-link text-white hover:text-secondary transition flex items-center">
+                <a href="/cristovive.html"
+                    class="nav-link text-white hover:text-secondary transition flex items-center">
                     <i class="fas fa-cross mr-1"></i> Cruzada Evangelística
                 </a>
                 <a href="/livraria.html" class="nav-link text-white hover:text-secondary transition flex items-center">
@@ -87,7 +90,7 @@
 
                 </a>
             </nav>
-            
+
             <button class="md:hidden text-white focus:outline-none">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
@@ -95,7 +98,7 @@
     </header>
 
     <!-- Mobile Menu -->
-    <nav id="mobileMenu" class="md:hidden hidden bg-primary text-white px-4 py-4">
+    <nav_bar id="mobileMenu" class="md:hidden hidden bg-primary text-white px-4 py-4">
         <a href="/ministerios.html" class="block py-2 nav-link hover:text-secondary transition flex items-center">
             <i class="fas fa-users mr-1"></i> Ministérios
         </a>
@@ -116,19 +119,64 @@
     <!-- Hero Section -->
     <section id="inicio" class="hero-bg text-white py-20 md:py-32">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">Assembleia de Deus Pentecostal</h2>
-            <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-secondary">Ministério Comunhão e Plenitude</h1>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Assembleia de Deus Pentecostal</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-secondary">Ministério Comunhão e Plenitude</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto">"A igreja da oração, da palavra e da comunhão"</p>
-            
+
+            <!-- News Gallery -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                <!-- News Item 1 -->
+                <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-6 text-dark flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold mb-2">Culto Especial de Jovens</h3>
+                        <p class="mb-4 text-sm">Participe do culto especial para jovens neste sábado às 16h. Louvor, palavra e comunhão!</p>
+                    </div>
+                    <button class="mt-auto bg-secondary hover:bg-yellow-600 text-dark font-bold py-2 px-4 rounded-full transition duration-300">
+                        Saiba Mais
+                    </button>
+                </div>
+                <!-- News Item 2 -->
+                <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-6 text-dark flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold mb-2">Nova Série de Estudos Bíblicos</h3>
+                        <p class="mb-4 text-sm">Iniciamos uma nova série de estudos bíblicos às quartas-feiras. Venha crescer na Palavra!</p>
+                    </div>
+                    <button class="mt-auto bg-secondary hover:bg-yellow-600 text-dark font-bold py-2 px-4 rounded-full transition duration-300">
+                        Ver Detalhes
+                    </button>
+                </div>
+                <!-- News Item 3 -->
+                <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-6 text-dark flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold mb-2">Campanha de Doação</h3>
+                        <p class="mb-4 text-sm">Ajude famílias carentes doando alimentos e roupas. Entregas na secretaria da igreja.</p>
+                    </div>
+                    <button class="mt-auto bg-secondary hover:bg-yellow-600 text-dark font-bold py-2 px-4 rounded-full transition duration-300">
+                        Contribuir
+                    </button>
+                </div>
+                <!-- News Item 4 -->
+                <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-6 text-dark flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold mb-2">Inscrições Abertas: Retiro 2024</h3>
+                        <p class="mb-4 text-sm">Garanta sua vaga no Retiro Espiritual 2024. Momentos de fé, lazer e amizade!</p>
+                    </div>
+                    <button class="mt-auto bg-secondary hover:bg-yellow-600 text-dark font-bold py-2 px-4 rounded-full transition duration-300">
+                        Inscrever-se
+                    </button>
+                </div>
+            </div>
+
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
-                <a href="#agenda" class="bg-secondary hover:bg-yellow-600 text-dark font-bold py-3 px-6 rounded-full transition duration-300">
+                <a href="#agenda"
+                    class="bg-secondary hover:bg-yellow-600 text-dark font-bold py-3 px-6 rounded-full transition duration-300">
                     Agenda de Cultos
                 </a>
-                <a href="#doacoes" class="bg-white hover:bg-gray-200 text-primary font-bold py-3 px-6 rounded-full transition duration-300">
+                <a href="#doacoes"
+                    class="bg-white hover:bg-gray-200 text-primary font-bold py-3 px-6 rounded-full transition duration-300">
                     Contribuir
                 </a>
             </div>
-        </div>
     </section>
 
     <!-- Bible Verses -->
