@@ -92,93 +92,81 @@
                 <a href="/projetos.html" class="nav-link text-white hover:text-secondary transition flex items-center">
                     <i class="fas fa-hands-helping mr-1"></i> Projectos Sociais
                 </a>
-
-                </a>
                 </nav>
 
-                <button class="md:hidden text-white focus:outline-none">
+                <button id="mobileMenuBtn" class="md:hidden text-white focus:outline-none">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
         </div>
     </header>
 
     <!-- Mobile Menu -->
-    <nav id="mobileMenu" class="md:hidden hidden bg-primary text-white px-4 py-4">
-        <a href="/ministerios.html" class="block py-2 nav-link hover:text-secondary transition flex items-center">
-            <i class="fas fa-users mr-1"></i> Ministérios
+    <nav id="mobileMenu"
+        class="md:hidden fixed top-0 left-0 w-full h-full bg-primary bg-opacity-95 text-white px-4 py-8 z-50 hidden transition-all duration-300">
+        <div class="flex justify-between items-center mb-8">
+            <span class="text-xl font-bold">Menu</span>
+            <button id="closeMobileMenu" class="text-white text-3xl focus:outline-none">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <a href="/ministerios.html"
+            class="block py-3 nav-link hover:text-secondary transition flex items-center text-lg">
+            <i class="fas fa-users mr-2"></i> Ministérios
         </a>
-        <a href="/fundadores.html" class="block py-2 nav-link hover:text-secondary transition flex items-center">
-            <i class="fas fa-user-tie mr-1"></i> Fundadores
+        <a href="/fundadores.html"
+            class="block py-3 nav-link hover:text-secondary transition flex items-center text-lg">
+            <i class="fas fa-user-tie mr-2"></i> Fundadores
         </a>
-        <a href="/cristovive.html" class="block py-2 nav-link hover:text-secondary transition flex items-center">
-            <i class="fas fa-cross mr-1"></i> Cruzada Evangelística
+        <a href="/cristovive.html"
+            class="block py-3 nav-link hover:text-secondary transition flex items-center text-lg">
+            <i class="fas fa-cross mr-2"></i> Cruzada Evangelística
         </a>
-        <a href="/livraria.html" class="block py-2 nav-link hover:text-secondary transition flex items-center">
-            <i class="fas fa-book mr-1"></i> Livraria
+        <a href="/livraria.html" class="block py-3 nav-link hover:text-secondary transition flex items-center text-lg">
+            <i class="fas fa-book mr-2"></i> Livraria
         </a>
-        <a href="/projetos.html" class="block py-2 nav-link hover:text-secondary transition flex items-center">
-            <i class="fas fa-hands-helping mr-1"></i> Projectos Sociais
+        <a href="/projetos.html" class="block py-3 nav-link hover:text-secondary transition flex items-center text-lg">
+            <i class="fas fa-hands-helping mr-2"></i> Projectos Sociais
         </a>
     </nav>
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeBtn = document.getElementById('closeMobileMenu');
 
-    <!-- Hero Section -->
+            menuBtn.addEventListener('click', function () {
+                mobileMenu.classList.remove('hidden');
+            });
+
+            closeBtn.addEventListener('click', function () {
+                mobileMenu.classList.add('hidden');
+            });
+
+            // Optional: close menu when clicking outside
+            mobileMenu.addEventListener('click', function (e) {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            menuBtn.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
     <section id="inicio" class="hero-bg text-white py-20 md:py-32">
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-4">Assembleia de Deus Pentecostal</h1>
             <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-secondary">Ministério Comunhão e Plenitude</h2>
             <p class="text-xl mb-8 max-w-2xl mx-auto">"A igreja da oração, da palavra e da comunhão"</p>
-
-            <!-- News Gallery -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-                <!-- News Item 1 -->
-                <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-6 text-dark flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-lg font-bold mb-2">Culto Especial de Jovens</h3>
-                        <p class="mb-4 text-sm">Participe do culto especial para jovens neste sábado às 16h. Louvor,
-                            palavra e comunhão!</p>
-                    </div>
-                    <button
-                        class="mt-auto bg-secondary hover:bg-yellow-600 text-dark font-bold py-2 px-4 rounded-full transition duration-300">
-                        Saiba Mais
-                    </button>
-                </div>
-                <!-- News Item 2 -->
-                <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-6 text-dark flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-lg font-bold mb-2">Nova Série de Estudos Bíblicos</h3>
-                        <p class="mb-4 text-sm">Iniciamos uma nova série de estudos bíblicos às quartas-feiras.
-                            Venha crescer na Palavra!</p>
-                    </div>
-                    <button
-                        class="mt-auto bg-secondary hover:bg-yellow-600 text-dark font-bold py-2 px-4 rounded-full transition duration-300">
-                        Ver Detalhes
-                    </button>
-                </div>
-                <!-- News Item 3 -->
-                <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-6 text-dark flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-lg font-bold mb-2">Campanha de Doação</h3>
-                        <p class="mb-4 text-sm">Ajude famílias carentes doando alimentos e roupas. Entregas na
-                            secretaria da igreja.</p>
-                    </div>
-                    <button
-                        class="mt-auto bg-secondary hover:bg-yellow-600 text-dark font-bold py-2 px-4 rounded-full transition duration-300">
-                        Contribuir
-                    </button>
-                </div>
-                <!-- News Item 4 -->
-                <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-6 text-dark flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-lg font-bold mb-2">Inscrições Abertas: Retiro 2024</h3>
-                        <p class="mb-4 text-sm">Garanta sua vaga no Retiro Espiritual 2024. Momentos de fé, lazer e
-                            amizade!</p>
-                    </div>
-                    <button
-                        class="mt-auto bg-secondary hover:bg-yellow-600 text-dark font-bold py-2 px-4 rounded-full transition duration-300">
-                        Inscrever-se
-                    </button>
-                </div>
-            </div>
 
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
                 <a href="#agenda"
@@ -213,56 +201,76 @@
         </div>
     </section>
 
-    <!-- Highlights Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Destaques</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Hero Section -->
+    <section class="relative bg-white py-24 md:py-32">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <!-- Left: Text Content -->
+            <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6">
+                    Bem-vindo à Assembleia de Deus Pentecostal
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">
+                    Ministério Comunhão e Plenitude
+                </h2>
+                <p class="text-lg text-dark mb-8">
+                    Descubra uma igreja de oração, palavra e comunhão. Participe dos nossos cultos, eventos e projetos
+                    sociais. Junte-se a nós e viva uma experiência transformadora!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#agenda"
+                        class="bg-secondary hover:bg-yellow-600 text-dark font-bold py-3 px-8 rounded-full transition duration-300">
+                        Ver Agenda de Cultos
+                    </a>
+                    <a href="#doacoes"
+                        class="bg-primary hover:bg-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                        Contribua Agora
+                    </a>
+                </div>
+            </div>
+            <!-- Right: Highlights Cards -->
+            <div class="md:w-1/2 grid grid-cols-1 gap-6">
                 <!-- Livraria -->
                 <div id="livraria"
-                    class="bg-light rounded-lg shadow-md overflow-hidden event-card transition duration-300">
-                    <div class="h-48 bg-cover bg-center"
+                    class="bg-light rounded-lg shadow-md overflow-hidden event-card transition duration-300 mb-6">
+                    <div class="h-40 bg-cover bg-center"
                         style="background-image: url('https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-dark">Livraria Cristã</h3>
-                        <p class="text-gray-700 mb-4">Adquira os melhores livros cristãos para edificação espiritual
-                            a
-                            preços acessíveis.</p>
-                        <a href="#" class="text-primary font-semibold hover:underline">Ver catálogo →</a>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold mb-1 text-dark">Livraria Cristã</h3>
+                        <p class="text-gray-700 mb-2 text-sm">Adquira livros cristãos para sua edificação espiritual.
+                        </p>
+                        <a href="#" class="text-primary font-semibold hover:underline text-sm">Ver catálogo →</a>
                     </div>
                 </div>
-
                 <!-- Cruzada Evangelística -->
                 <div id="cruzada"
-                    class="bg-light rounded-lg shadow-md overflow-hidden event-card transition duration-300">
-                    <div class="h-48 bg-cover bg-center"
-                        style="background-image: url('https://images.unsplash.com/photo-1437651025703-2858c944e3eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                    class="bg-light rounded-lg shadow-md overflow-hidden event-card transition duration-300 mb-6">
+                    <div class="h-40 bg-cover bg-center"
+                        style="background-image: url('https://scontent.flad5-1.fna.fbcdn.net/v/t39.30808-6/503152581_684878054294951_1460253888135855700_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=vXhH4S8591QQ7kNvwGgwlg5&_nc_oc=AdlwZZzyMAiXNQJlR_0gk1b28lbOvm4dkpuonF4w5VQTIAD6WS8A59W8boFCKcEo7I3TZJOJUp1mtJd71UU_ci1E&_nc_zt=23&_nc_ht=scontent.flad5-1.fna&_nc_gid=o_k03MgHjA2hUzxnOVsIMw&oh=00_AfSW849ixoyXh5k-sOpChs3e-tuQJUw6tis-RbnjE9zvIg&oe=6885268B');">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-dark">Cruzada Evangelística Cristo Vive</h3>
-                        <p class="text-gray-700 mb-4">Participe da maior cruzada evangelística da região. Salvação,
-                            cura
-                            e libertação!</p>
-                        <a href="#" class="text-primary font-semibold hover:underline">Saiba mais →</a>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold mb-1 text-dark">Cruzada Cristo Vive</h3>
+                        <p class="text-gray-700 mb-2 text-sm">Participe da maior cruzada evangelística da região.</p>
+                        <a href="https://adpmcp.org/cristovive"
+                            class="text-primary font-semibold hover:underline text-sm">Saiba mais →</a>
                     </div>
                 </div>
-
-                <!-- Video Embed -->
+                <!-- Última Mensagem -->
                 <div class="bg-light rounded-lg shadow-md overflow-hidden event-card transition duration-300">
-                    <div class="h-48 bg-gray-200 flex items-center justify-center">
-                        <i class="fas fa-play-circle text-5xl text-primary"></i>
+                    <div class="h-40 bg-gray-200 flex items-center justify-center">
+                        <i class="fas fa-play-circle text-4xl text-primary"></i>
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-dark">Última Mensagem</h3>
-                        <p class="text-gray-700 mb-4">Assista à última mensagem pregada em nosso culto.</p>
+                    <div class="p-4">
+                        <h3 class="text-lg font-bold mb-1 text-dark">Última Mensagem</h3>
+                        <p class="text-gray-700 mb-2 text-sm">Assista à última mensagem do nosso culto.</p>
                         <a href="https://www.youtube.com/channel/UCLqIahcNeRF7nmZrwcolR-w/" target="_blank"
-                            class="text-primary font-semibold hover:underline">Ver no YouTube →</a>
+                            class="text-primary font-semibold hover:underline text-sm">Ver no YouTube →</a>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    </div>
     </section>
 
     <!-- Events Section -->
@@ -275,16 +283,16 @@
                 <div class="bg-white rounded-lg shadow-md p-6 event-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <div class="bg-primary text-white rounded-lg p-3 text-center mr-4">
-                            <p class="text-xl font-bold">15</p>
-                            <p class="text-sm">JUN</p>
+                            <p class="text-xl font-bold">I DOM</p>
+                            <p class="text-sm">MÊS</p>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold">Conferência de Mulheres</h3>
-                            <p class="text-gray-600">9h00 - 12h00</p>
+                            <h3 class="text-xl font-bold">Culto de Santa Ceia</h3>
+                            <p class="text-gray-600">9h20 - 12h00</p>
                         </div>
                     </div>
-                    <p class="text-gray-700 mb-4">Conferência especial para mulheres com o tema "Vivendo em
-                        Plenitude".
+                    <p class="text-gray-700 mb-4">Todo primeiro domingo de cada mês venha celebrar connosco, a Santa
+                        Ceia.
                     </p>
                     <a href="#" class="text-primary font-semibold hover:underline">Mais informações</a>
                 </div>
@@ -293,459 +301,531 @@
                 <div class="bg-white rounded-lg shadow-md p-6 event-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <div class="bg-primary text-white rounded-lg p-3 text-center mr-4">
-                            <p class="text-xl font-bold">20</p>
-                            <p class="text-sm">JUN</p>
+                            <p class="text-xl font-bold">17</p>
+                            <p class="text-sm">AGO</p>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold">Retiro de Jovens</h3>
-                            <p class="text-gray-600">Todo o dia</p>
+                            <h3 class="text-xl font-bold">ACAMPAMENTO DE ADOLESCENTES</h3>
+                            <p class="text-gray-600">Toda Semana</p>
                         </div>
                     </div>
-                    <p class="text-gray-700 mb-4">Retiro espiritual para jovens com atividades, louvor e palavra de
+                    <p class="text-gray-700 mb-4">Acampamento espiritual para adolescente, participe, haverá muitas
+                        atividades, louvor e palavra de
                         Deus.</p>
-                    <a href="#" class="text-primary font-semibold hover:underline">Mais informações</a>
+                    <a href="#" class="text-primary font-semibold hover:underline">Faça sua incrição</a>
                 </div>
 
                 <!-- Event 3 -->
                 <div class="bg-white rounded-lg shadow-md p-6 event-card transition duration-300">
                     <div class="flex items-center mb-4">
                         <div class="bg-primary text-white rounded-lg p-3 text-center mr-4">
-                            <p class="text-xl font-bold">25</p>
-                            <p class="text-sm">JUN</p>
+                            <p class="text-xl font-bold">BREVE</p>
+                            <p class="text-sm">MENTE</p>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold">Cruzada Cristo Vive</h3>
-                            <p class="text-gray-600">18h00 - 22h00</p>
+                            <h3 class="text-xl font-bold">Cruzada Evangelística Cristo Vive</h3>
+                            <p class="text-gray-600">8h00 - 19h00</p>
                         </div>
                     </div>
                     <p class="text-gray-700 mb-4">Grande cruzada evangelística com pregação da palavra e milagres.
                     </p>
-                    <a href="#" class="text-primary font-semibold hover:underline">Mais informações</a>
+                    <a href="https://adpmcp.org/cristovive" class="text-primary font-semibold hover:underline">Faça uma
+                        Doação</a>
                 </div>
             </div>
         </div>
-        </section>
 
-        <!-- Donations Section -->
-        <section id="doacoes" class="py-16 bg-primary text-white">
+        <!-- Livro e Versículo do Mês -->
+        <section class="py-16 bg-white">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12">Contribua com a Obra de Deus</h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <!-- Bank Details -->
-                    <div class="bg-white text-dark rounded-lg shadow-lg p-6 donation-card transition duration-300">
-                        <div class="text-center mb-6">
-                            <i class="fas fa-university text-4xl text-secondary mb-4"></i>
-                            <h3 class="text-xl font-bold mb-2">Coordenadas Bancárias</h3>
-                            <p class="text-gray-700">Faça sua oferta ou dízimo através de transferência bancária</p>
-                        </div>
-
-                        <div class="space-y-4">
-                            <div>
-                                <p class="font-semibold">Banco:</p>
-                                <p>Banco de Fomento Angola</p>
-                            </div>
-                            <div>
-                                <p class="font-semibold">Titular:</p>
-                                <p>Assembleia de Deus Pentecostal Centro Filadelfia Lub</p>
-                            </div>
-                            <div>
-                                <p class="font-semibold">IBAN:</p>
-                                <p>AO06 0006 0000  0385 5072 3014 1</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Buy Me A Coffee -->
-                    <div class="bg-white text-dark rounded-lg shadow-lg p-6 donation-card transition duration-300">
-                        <div class="text-center mb-6">
-                            <i class="fas fa-coffee text-4xl text-secondary mb-4"></i>
-                            <h3 class="text-xl font-bold mb-2">Doação Online</h3>
-                            <p class="text-gray-700">Contribua facilmente com qualquer valor através do Buy Me A Coffee
-                            </p>
-                        </div>
-
-                        <div class="flex justify-center mt-8">
-                            <a href="https://buymeacoffee.com/adpmcponline"
-                                class="bg-secondary hover:bg-yellow-600 text-dark font-bold py-3 px-6 rounded-full transition duration-300 flex items-center">
-                                <i class="fas fa-mug-hot mr-2"></i> Doar Agora
-                            </a>
-                        </div>
-                    </div>
+                <h2 class="text-3xl font-bold text-center mb-8 text-primary">Livro e Versículo do Mês</h2>
+                <div class="max-w-2xl mx-auto bg-light rounded-lg shadow-md p-8 text-center">
+                    <h3 class="text-2xl font-semibold mb-4 text-secondary">Livro: Lucas</h3>
+                    <p class="text-xl italic mb-2 text-dark">"...haverá mais alegria no céu por um pecador que se
+                        arrepende do que por noventa e nove justos que não precisam de arrependimento."</p>
+                    <p class="font-bold text-primary">Lucas 15:7</p>
                 </div>
             </div>
         </section>
 
-        <!-- Worship Schedule -->
-        <section id="agenda" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12 text-primary">Agenda de Cultos</h2>
-                <div class="max-w-4xl mx-auto">
-                    <div class="bg-light rounded-lg shadow-md overflow-hidden">
-                        <div id="schedule-tabs" class="flex border-b border-gray-200">
-                            <button class="flex-1 py-4 px-2 text-primary font-bold focus:outline-none tab-btn active"
-                                data-day="segunda">Segunda</button>
-                            <button class="flex-1 py-4 px-2 text-primary font-bold focus:outline-none tab-btn"
-                                data-day="terca">Terça</button>
-                            <button class="flex-1 py-4 px-2 text-primary font-bold focus:outline-none tab-btn"
-                                data-day="quarta">Quarta</button>
-                            <button class="flex-1 py-4 px-2 text-primary font-bold focus:outline-none tab-btn"
-                                data-day="quinta">Quinta</button>
-                            <button class="flex-1 py-4 px-2 text-primary font-bold focus:outline-none tab-btn"
-                                data-day="sabado">Sábado</button>
-                            <button class="flex-1 py-4 px-2 text-primary font-bold focus:outline-none tab-btn"
-                                data-day="domingo">Domingo</button>
+        <!-- Social Media of the Church -->
+        <section class="py-16 relative"
+            style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-primary bg-opacity-80"></div>
+            <div class="relative container mx-auto px-4 flex flex-col items-center">
+                <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-8 max-w-lg w-full text-center">
+                    <h2 class="text-3xl font-bold mb-6 text-primary">Redes Sociais da Igreja</h2>
+                    <div class="flex justify-center space-x-6 mb-4">
+                        <a href="https://m.facebook.com/adpmcomunhaoeplenitude/" target="_blank"
+                            class="text-primary hover:text-secondary text-3xl transition"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/adpmcomunhaoeplenitude/" target="_blank"
+                            class="text-primary hover:text-secondary text-3xl transition"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCLqIahcNeRF7nmZrwcolR-w/" target="_blank"
+                            class="text-primary hover:text-secondary text-3xl transition"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@tvplenitue_mcp" target="_blank"
+                            class="text-primary hover:text-secondary text-3xl transition"><i
+                                class="fab fa-tiktok"></i></a>
+                    </div>
+                    <p class="text-dark">Siga-nos e acompanhe todas as novidades, cultos e eventos!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media of the Pastor -->
+        <section class="py-16 relative"
+            style="background-image: url('https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=1361&q=80'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-dark bg-opacity-80"></div>
+            <div class="relative container mx-auto px-4 flex flex-col items-center">
+                <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-8 max-w-lg w-full text-center">
+                    <h2 class="text-3xl font-bold mb-6 text-primary">Redes Sociais do Pastor</h2>
+                    <div class="flex justify-center space-x-6 mb-4">
+                        <a href="https://www.facebook.com/rev.ananiasalberto/" target="_blank"
+                            class="text-primary hover:text-secondary text-3xl transition"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/rev.ananiasalberto/" target="_blank"
+                            class="text-primary hover:text-secondary text-3xl transition"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@revananiasalberto" target="_blank"
+                            class="text-primary hover:text-secondary text-3xl transition"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@reverendoananiasalberto" target="_blank"
+                            class="text-primary hover:text-secondary text-3xl transition"><i
+                                class="fab fa-tiktok"></i></a>
+                    </div>
+                    <p class="text-dark">Acompanhe as mensagens e reflexões do nosso pastor nas redes sociais.</p>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <!-- Donations Section -->
+    <section id="doacoes" class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contribua com a Obra de Deus</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Bank Details -->
+                <div class="bg-white text-dark rounded-lg shadow-lg p-6 donation-card transition duration-300">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-university text-4xl text-secondary mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Coordenadas Bancárias</h3>
+                        <p class="text-gray-700">Faça sua oferta ou dízimo através de transferência bancária</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-semibold">Banco:</p>
+                            <p>Banco de Fomento Angola</p>
                         </div>
-                        <div id="schedule-content" class="p-6">
-                            <!-- Content will be injected here -->
+                        <div>
+                            <p class="font-semibold">Titular:</p>
+                            <p>Assembleia de Deus Pentecostal Centro Filadelfia Lub</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">IBAN:</p>
+                            <p>AO06 0006 0000 0385 5072 3014 1</p>
                         </div>
                     </div>
                 </div>
-            </div>
-            <script>
-                const scheduleData = {
-                    segunda: [
-                        { title: "Escola de Liderança", time: "16h00" }
-                    ],
-                    terca: [
-                        { title: "Culto de Louvor e Palavra", time: "16h00" }
-                    ],
-                    quarta: [
-                        { title: "Culto de Mulheres", time: "9h00" },
-                        { title: "Culto de Jovens", time: "16h00" }
-                    ],
-                    quinta: [
-                        { title: "Culto da Vitória", time: "16h00" }
-                    ],
-                    sabado: [
-                        { title: "Culto de Libertação, Cura e Milagres", time: "6h00" }
-                    ],
-                    domingo: [
-                        { title: "Culto da Família", time: "7h00" },
-                        { title: "Escola Bíblica Dominical", time: "9h30" },
-                        { title: "Culto da Palavra", time: "10h30" }
-                    ]
-                };
 
-                function renderSchedule(day) {
-                    const events = scheduleData[day];
-                    let html = '';
-                    if (events) {
-                        html = events.map(ev => `
+                <!-- Buy Me A Coffee -->
+                <div class="bg-white text-dark rounded-lg shadow-lg p-6 donation-card transition duration-300">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-coffee text-4xl text-secondary mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Doação Online</h3>
+                        <p class="text-gray-700">Contribua facilmente com qualquer valor através do Buy Me A Coffee
+                        </p>
+                    </div>
+
+                    <div class="flex justify-center mt-8">
+                        <a href="https://buymeacoffee.com/adpmcponline"
+                            class="bg-secondary hover:bg-yellow-600 text-dark font-bold py-3 px-6 rounded-full transition duration-300 flex items-center">
+                            <i class="fas fa-mug-hot mr-2"></i> Doar Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Worship Schedule -->
+    <section id="agenda" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Agenda de Cultos</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-light rounded-lg shadow-md overflow-hidden">
+                    <div id="schedule-tabs" class="flex border-b border-gray-200">
+                        <button class="flex-1 py-4 px-2 text-primary font-bold focus:outline-none tab-btn active"
+                            data-day="segunda">Segunda</button>
+                        <button class="flex-1 py-4 px-2 text-primary font-bold focus:outline-none tab-btn"
+                            data-day="terca">Terça</button>
+                        <button class="flex-1 py-4 px-2 text-primary font-bold focus:outline-none tab-btn"
+                            data-day="quarta">Quarta</button>
+                        <button class="flex-1 py-4 px-2 text-primary font-bold focus:outline-none tab-btn"
+                            data-day="quinta">Quinta</button>
+                        <button class="flex-1 py-4 px-2 text-primary font-bold focus:outline-none tab-btn"
+                            data-day="sabado">Sábado</button>
+                        <button class="flex-1 py-4 px-2 text-primary font-bold focus:outline-none tab-btn"
+                            data-day="domingo">Domingo</button>
+                    </div>
+                    <div id="schedule-content" class="p-6">
+                        <!-- Content will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const scheduleData = {
+                segunda: [
+                    { title: "Escola de Liderança", time: "16h00" }
+                ],
+                terca: [
+                    { title: "Culto de Louvor e Palavra", time: "16h00" }
+                ],
+                quarta: [
+                    { title: "Culto de Mulheres", time: "9h00" },
+                    { title: "Culto de Jovens", time: "16h00" }
+                ],
+                quinta: [
+                    { title: "Culto da Vitória", time: "16h00" }
+                ],
+                sabado: [
+                    { title: "Culto de Libertação, Cura e Milagres", time: "6h00" }
+                ],
+                domingo: [
+                    { title: "Culto da Família", time: "7h00" },
+                    { title: "Escola Bíblica Dominical", time: "9h30" },
+                    { title: "Culto da Palavra", time: "10h30" }
+                ]
+            };
+
+            function renderSchedule(day) {
+                const events = scheduleData[day];
+                let html = '';
+                if (events) {
+                    html = events.map(ev => `
                         <div class="flex justify-between items-center mb-4 last:mb-0">
                             <p class="text-gray-700 font-semibold">${ev.title}</p>
                             <span class="bg-primary text-white py-1 px-3 rounded-full">${ev.time}</span>
                         </div>
                     `).join('');
-                    } else {
-                        html = '<p class="text-gray-500">Nenhum culto agendado para este dia.</p>';
-                    }
-                    document.getElementById('schedule-content').innerHTML = html;
+                } else {
+                    html = '<p class="text-gray-500">Nenhum culto agendado para este dia.</p>';
                 }
+                document.getElementById('schedule-content').innerHTML = html;
+            }
 
-                // Initial render
-                renderSchedule('segunda');
+            // Initial render
+            renderSchedule('segunda');
 
-                // Tab switching
-                document.querySelectorAll('.tab-btn').forEach(btn => {
-                    btn.addEventListener('click', function () {
-                        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active', 'border-b-2', 'border-secondary'));
-                        this.classList.add('active', 'border-b-2', 'border-secondary');
-                        renderSchedule(this.getAttribute('data-day'));
-                    });
+            // Tab switching
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active', 'border-b-2', 'border-secondary'));
+                    this.classList.add('active', 'border-b-2', 'border-secondary');
+                    renderSchedule(this.getAttribute('data-day'));
                 });
-            </script>
-            <style>
-                .tab-btn.active {
-                    border-bottom: 2px solid #D4A017;
-                    background: #fffbe8;
-                }
-            </style>
-       
-        </section>
+            });
+        </script>
+        <style>
+            .tab-btn.active {
+                border-bottom: 2px solid #D4A017;
+                background: #fffbe8;
+            }
+        </style>
 
-        <!-- Ministries Section -->
-        <section id="ministerios" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12 text-primary">Nossos Ministérios</h2>
+    </section>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Ministry 1 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-cover bg-center"
-                            style="background-image: url('https://images.unsplash.com/photo-1452421822248-d49c2f54293e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Ministério de Louvor</h3>
-                            <p class="text-gray-700 mb-4">Responsável por conduzir a congregação em adoração através da
-                                música e cânticos espirituais.</p>
-                            <a href="#" class="text-primary font-semibold hover:underline">Saiba mais →</a>
-                        </div>
+    <!-- Ministries Section -->
+    <section id="ministerios" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Nossos Ministérios</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Ministry 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-cover bg-center"
+                        style="background-image: url('https://images.unsplash.com/photo-1452421822248-d49c2f54293e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
                     </div>
-
-                    <!-- Ministry 2 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-cover bg-center"
-                            style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Ministério de Jovens</h3>
-                            <p class="text-gray-700 mb-4">Discipulado e atividades para jovens, ajudando-os a crescer na
-                                fé
-                                e no relacionamento com Cristo.</p>
-                            <a href="#" class="text-primary font-semibold hover:underline">Saiba mais →</a>
-                        </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Ministério de Louvor</h3>
+                        <p class="text-gray-700 mb-4">Responsável por conduzir a congregação em adoração através da
+                            música e cânticos espirituais.</p>
+                        <a href="#" class="text-primary font-semibold hover:underline">Saiba mais →</a>
                     </div>
+                </div>
 
-                    <!-- Ministry 3 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-48 bg-cover bg-center"
-                            style="background-image: url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Ministério de Mulheres</h3>
-                            <p class="text-gray-700 mb-4">Encontros e estudos bíblicos específicos para mulheres,
-                                abordando
-                                temas relevantes para sua vida espiritual.</p>
-                            <a href="#" class="text-primary font-semibold hover:underline">Saiba mais →</a>
-                        </div>
+                <!-- Ministry 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-cover bg-center"
+                        style="background-image: url('https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Ministério de Jovens</h3>
+                        <p class="text-gray-700 mb-4">Discipulado e atividades para jovens, ajudando-os a crescer na
+                            fé
+                            e no relacionamento com Cristo.</p>
+                        <a href="#" class="text-primary font-semibold hover:underline">Saiba mais →</a>
+                    </div>
+                </div>
+
+                <!-- Ministry 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-48 bg-cover bg-center"
+                        style="background-image: url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Ministério de Mulheres</h3>
+                        <p class="text-gray-700 mb-4">Encontros e estudos bíblicos específicos para mulheres,
+                            abordando
+                            temas relevantes para sua vida espiritual.</p>
+                        <a href="#" class="text-primary font-semibold hover:underline">Saiba mais →</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Founders Section -->
-        <section id="fundadores" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12 text-primary">Nossos Fundadores</h2>
+    <!-- Founders Section -->
+    <section id="fundadores" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Nossos Fundadores</h2>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                    <!-- Founder 1 -->
-                    <div class="flex flex-col md:flex-row items-center">
-                        <div class="w-40 h-40 rounded-full bg-gray-300 mb-4 md:mb-0 md:mr-6 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1361&q=80"
-                                alt="Pastor" class="w-full h-full object-cover">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <!-- Founder 1 -->
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="w-40 h-40 rounded-full bg-gray-300 mb-4 md:mb-0 md:mr-6 overflow-hidden">
+                        <img src="https://scontent.flad5-1.fna.fbcdn.net/v/t39.30808-6/502416594_684880880961335_3313416955598202146_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=cL8cV_xg7iEQ7kNvwGXz8Kn&_nc_oc=AdnhTNz_wSpg7jpit3LLDF7XCnpnmjqrdGJ4FsS3RJTkQR8Z9LrIOHZmmdXSmCDLwcComCu1M5N3HdyWOd4PzlMO&_nc_zt=23&_nc_ht=scontent.flad5-1.fna&_nc_gid=VOJXMv1YbGbDE40IuW9FXw&oh=00_AfSeG5xtQqxvmzzReHrhY2av3hWad9sbPUwoadfjR0IFOA&oe=68854E41"
+                            alt="Pastor" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Reverendo Ananias Alberto</h3>
+                        <p class="text-secondary font-semibold mb-2">Fundador e Pastor Presidente</p>
+                        <p class="text-gray-700">Homem de Deus chamado para estabelecer esta obra em Lubango, com
+                            mais de 24 anos de ministério.</p>
+                    </div>
+                </div>
+
+                <!-- Founder 2 -->
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="w-40 h-40 rounded-full bg-gray-300 mb-4 md:mb-0 md:mr-6 overflow-hidden">
+                        <img src="https://scontent.flad5-1.fna.fbcdn.net/v/t39.30808-6/506448612_1129332075906988_2273547859646956233_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=f727a1&_nc_ohc=lHvVPk7IJs4Q7kNvwGqPMpy&_nc_oc=AdmXPWbPYbguvLRWvOzS56kKRKQRKsy2DZtlrUSygSHf6NNeFF_o5Nkpsxj0VIIN5kRX4icGvP_-QPOZ0V7eVqdF&_nc_zt=23&_nc_ht=scontent.flad5-1.fna&_nc_gid=SLqWwrNbYbNaS69y143zhw&oh=00_AfRLCm9PvYhFY4ougxk45PE3ii6_U2IZt7_wroSR_C0Xew&oe=6885455D"
+                            alt="Pastora" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold">Diaconisa Laurinda Alberto</h3>
+                        <p class="text-secondary font-semibold mb-2">Co-fundadora e Diretora das Filhas de Sara
+                        </p>
+                        <p class="text-gray-700">Mulher virtuosa que tem dedicado sua vida ao serviço do Reino e ao
+                            discipulado de mulheres.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Projects -->
+    <section id="projetos" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-primary">Projectos Sociais</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-64 bg-cover bg-center"
+                        style="background-image: url('https://images.unsplash.com/photo-1529333164850-2622f4c9c1a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Centro de Apoio Infantil</h3>
+                        <p class="text-gray-700 mb-4">Projeto que oferece reforço escolar, alimentação e atividades
+                            recreativas para crianças carentes da comunidade.</p>
+                        <a href="#" class="text-primary font-semibold hover:underline">Como ajudar →</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="h-64 bg-cover bg-center"
+                        style="background-image: url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Distribuição de Cestas Básicas</h3>
+                        <p class="text-gray-700 mb-4">Ação mensal que beneficia famílias em situação de
+                            vulnerabilidade
+                            social com alimentos e produtos de higiene.</p>
+                        <a href="#" class="text-primary font-semibold hover:underline">Participar →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Entre em Contato</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Informações de Contato</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-secondary mt-1 mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Endereço:</p>
+                                <p>Bairro Casa-Verde, por detrás do Condomínio Mapunda Residence, Lubango, Angola
+                                </p>
+                                <p>
+                                    <a href="https://www.google.com/maps?q=-14.9173526,-13.4974012" target="_blank"
+                                        class="text-secondary underline hover:text-yellow-600">
+                                        Clica aqui para localizar no mapa
+                                    </a>
+                                </p>
+                            </div>
                         </div>
+
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-secondary mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Telefone:</p>
+                                <p>+244 934 992 323</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <i class="fab fa-whatsapp text-secondary mr-4"></i>
+                            <div>
+                                <p class="font-semibold">WhatsApp:</p>
+                                <a href="https://wa.me/244921652665" target="_blank"
+                                    class="hover:underline">921652665</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-secondary mr-4"></i>
+                            <div>
+                                <p class="font-semibold">E-mail:</p>
+                                <a href="mailto:contacto@adpmcp.org" class="hover:underline">contacto@adpmcp.org</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="text-lg font-bold mb-4">Redes Sociais</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://m.facebook.com/adpmcomunhaoeplenitude/" target="_blank"
+                                class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.instagram.com/adpmcomunhaoeplenitude/" target="_blank"
+                                class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.youtube.com/channel/UCLqIahcNeRF7nmZrwcolR-w/" target="_blank"
+                                class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@tvplenitue_mcp" target="_blank"
+                                class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6">Envie-nos uma Mensagem</h3>
+
+                    <form id="contactForm" class="space-y-4">
                         <div>
-                            <h3 class="text-xl font-bold">Reverendo Ananias Alberto</h3>
-                            <p class="text-secondary font-semibold mb-2">Fundador e Pastor Presidente</p>
-                            <p class="text-gray-700">Homem de Deus chamado para estabelecer esta obra em Lubango, com
-                                mais de 24 anos de ministério.</p>
+                            <label for="name" class="block mb-1">Nome Completo</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-4 py-2 rounded text-dark">
                         </div>
-                    </div>
 
-                    <!-- Founder 2 -->
-                    <div class="flex flex-col md:flex-row items-center">
-                        <div class="w-40 h-40 rounded-full bg-gray-300 mb-4 md:mb-0 md:mr-6 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1370&q=80"
-                                alt="Pastora" class="w-full h-full object-cover">
-                        </div>
                         <div>
-                            <h3 class="text-xl font-bold">Diaconisa Laurinda Alberto</h3>
-                            <p class="text-secondary font-semibold mb-2">Co-fundadora e Diretora das Filhas de Sara
-                            </p>
-                            <p class="text-gray-700">Mulher virtuosa que tem dedicado sua vida ao serviço do Reino e ao
-                                discipulado de mulheres.</p>
+                            <label for="email" class="block mb-1">E-mail</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-2 rounded text-dark">
                         </div>
-                    </div>
+
+                        <div>
+                            <label for="phone" class="block mb-1">Telefone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 rounded text-dark">
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block mb-1">Assunto</label>
+                            <select id="subject" name="subject" required class="w-full px-4 py-2 rounded text-dark">
+                                <option value="">Selecione um assunto</option>
+                                <option value="Pedido de Oração">Pedido de Oração</option>
+                                <option value="Conversão">Aceitar Jesus Como Senhor e Salvador?</option>
+                                <option value="Membro">Membro</option>
+                                <option value="Cruzada Evangelística Cristo Vive">Cruzada Evangelística Cristo Vive
+                                </option>
+                                <option value="Acção Social">Acção Social</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block mb-1">Mensagem</label>
+                            <textarea id="message" name="message" rows="4" required
+                                class="w-full px-4 py-2 rounded text-dark"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="bg-secondary hover:bg-yellow-600 text-dark font-bold py-3 px-6 rounded-full transition duration-300">
+                            Enviar Mensagem
+                        </button>
+                    </form>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Social Projects -->
-        <section id="projetos" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12 text-primary">Projectos Sociais</h2>
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-secondary">Assembleia de Deus Pentecostal</h3>
+                    <p class="mb-4">Ministério Comunhão e Plenitude</p>
+                    <p>"A igreja da oração, da palavra e da comunhão"</p>
+                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Project 1 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-64 bg-cover bg-center"
-                            style="background-image: url('https://images.unsplash.com/photo-1529333164850-2622f4c9c1a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Centro de Apoio Infantil</h3>
-                            <p class="text-gray-700 mb-4">Projeto que oferece reforço escolar, alimentação e atividades
-                                recreativas para crianças carentes da comunidade.</p>
-                            <a href="#" class="text-primary font-semibold hover:underline">Como ajudar →</a>
-                        </div>
-                    </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-secondary">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="hover:text-secondary transition">Início</a></li>
+                        <li><a href="#ministerios" class="hover:text-secondary transition">Ministérios</a></li>
+                        <li><a href="#cruzada" class="hover:text-secondary transition">Cruzada Cristo Vive</a></li>
+                        <li><a href="#projetos" class="hover:text-secondary transition">Projectos Sociais</a></li>
+                        <li><a href="#doacoes" class="hover:text-secondary transition">Contribuir</a></li>
+                    </ul>
+                </div>
 
-                    <!-- Project 2 -->
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div class="h-64 bg-cover bg-center"
-                            style="background-image: url('https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Distribuição de Cestas Básicas</h3>
-                            <p class="text-gray-700 mb-4">Ação mensal que beneficia famílias em situação de
-                                vulnerabilidade
-                                social com alimentos e produtos de higiene.</p>
-                            <a href="#" class="text-primary font-semibold hover:underline">Participar →</a>
-                        </div>
-                    </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-secondary">Horário de Funcionamento</h3>
+                    <p class="mb-2">Segunda a Sexta: 8h00 - 18h00</p>
+                    <p>Sábado e Domingo: De acordo com agenda de cultos</p>
                 </div>
             </div>
 
-        </section>
-
-        <!-- Contact Section -->
-        <section class="py-16 bg-primary text-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12">Entre em Contato</h2>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                    <!-- Contact Info -->
-                    <div>
-                        <h3 class="text-xl font-bold mb-6">Informações de Contato</h3>
-
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt text-secondary mt-1 mr-4"></i>
-                                <div>
-                                    <p class="font-semibold">Endereço:</p>
-                                    <p>Bairro Casa-Verde, por detrás do Condomínio Mapunda Residence, Lubango, Angola
-                                    </p> 
-                                <a href="https://www.google.com/maps?q=-14.9173526,-13.4974012" target="_blank" class="text-secondary underline hover:text-yellow-600">
-                                    Clica aqui para localizar no mapa
-                                </a>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center">
-                                <i class="fas fa-phone-alt text-secondary mr-4"></i>
-                                <div>
-                                    <p class="font-semibold">Telefone:</p>
-                                    <p>+244 934 992 323</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center">
-                                <i class="fab fa-whatsapp text-secondary mr-4"></i>
-                                <div>
-                                    <p class="font-semibold">WhatsApp:</p>
-                                    <a href="https://wa.me/244921652665" target="_blank"
-                                        class="hover:underline">921652665</a>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center">
-                                <i class="fas fa-envelope text-secondary mr-4"></i>
-                                <div>
-                                    <p class="font-semibold">E-mail:</p>
-                                    <a href="mailto:contacto@adpmcp.org" class="hover:underline">contacto@adpmcp.org</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-8">
-                            <h4 class="text-lg font-bold mb-4">Redes Sociais</h4>
-                            <div class="flex space-x-4">
-                                <a href="https://m.facebook.com/adpmcomunhaoeplenitude/" target="_blank"
-                                    class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="https://www.instagram.com/adpmcomunhaoeplenitude/" target="_blank"
-                                    class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://www.youtube.com/channel/UCLqIahcNeRF7nmZrwcolR-w/" target="_blank"
-                                    class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="https://www.tiktok.com/@tvplenitue_mcp" target="_blank"
-                                    class="bg-white text-primary w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition">
-                                    <i class="fab fa-tiktok"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Contact Form -->
-                    <div>
-                        <h3 class="text-xl font-bold mb-6">Envie-nos uma Mensagem</h3>
-
-                        <form id="contactForm" class="space-y-4">
-                            <div>
-                                <label for="name" class="block mb-1">Nome Completo</label>
-                                <input type="text" id="name" name="name" required
-                                    class="w-full px-4 py-2 rounded text-dark">
-                            </div>
-
-                            <div>
-                                <label for="email" class="block mb-1">E-mail</label>
-                                <input type="email" id="email" name="email" required
-                                    class="w-full px-4 py-2 rounded text-dark">
-                            </div>
-
-                            <div>
-                                <label for="phone" class="block mb-1">Telefone</label>
-                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 rounded text-dark">
-                            </div>
-
-                            <div>
-                                <label for="subject" class="block mb-1">Assunto</label>
-                                <select id="subject" name="subject" required class="w-full px-4 py-2 rounded text-dark">
-                                    <option value="">Selecione um assunto</option>
-                                    <option value="Pedido de Oração">Pedido de Oração</option>
-                                    <option value="Membro">Membro</option>
-                                    <option value="Cruzada Evangelística Cristo Vive">Cruzada Evangelística Cristo Vive
-                                    </option>
-                                    <option value="Acção Social">Acção Social</option>
-                                    <option value="Outro">Outro</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="message" class="block mb-1">Mensagem</label>
-                                <textarea id="message" name="message" rows="4" required
-                                    class="w-full px-4 py-2 rounded text-dark"></textarea>
-                            </div>
-
-                            <button type="submit"
-                                class="bg-secondary hover:bg-yellow-600 text-dark font-bold py-3 px-6 rounded-full transition duration-300">
-                                Enviar Mensagem
-                            </button>
-                        </form>
-                    </div>
-                </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+                <p>&copy; COPYRIGHT © 2025 Todos os direitos reservados a ADP Ministério Comunhão e Plenitude.
+                    Desenvolvido por Job Zezz</p>
             </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="bg-dark text-white py-8">
-            <div class="container mx-auto px-4">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div>
-                        <h3 class="text-xl font-bold mb-4 text-secondary">Assembleia de Deus Pentecostal</h3>
-                        <p class="mb-4">Ministério Comunhão e Plenitude</p>
-                        <p>"A igreja da oração, da palavra e da comunhão"</p>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xl font-bold mb-4 text-secondary">Links Rápidos</h3>
-                        <ul class="space-y-2">
-                            <li><a href="#inicio" class="hover:text-secondary transition">Início</a></li>
-                            <li><a href="#ministerios" class="hover:text-secondary transition">Ministérios</a></li>
-                            <li><a href="#cruzada" class="hover:text-secondary transition">Cruzada Cristo Vive</a></li>
-                            <li><a href="#projetos" class="hover:text-secondary transition">Projectos Sociais</a></li>
-                            <li><a href="#doacoes" class="hover:text-secondary transition">Contribuir</a></li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 class="text-xl font-bold mb-4 text-secondary">Horário de Funcionamento</h3>
-                        <p class="mb-2">Segunda a Sexta: 8h00 - 17h00</p>
-                        <p>Sábado e Domingo: De acordo com agenda de cultos</p>
-                    </div>
-                </div>
-
-                <div class="border-t border-gray-700 mt-8 pt-6 text-center">
-                    <p>&copy; Assembleia de Deus Pentecostal Ministério Comunhão e Plenitude. (2021) Todos os direitos
-                        reservados. Desenvolvido por Job Zezz</p>
-                </div>
-            </div>
-        </footer>
+        </div>
+    </footer>
 
 </body>
 
