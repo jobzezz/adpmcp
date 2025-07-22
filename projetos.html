@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt" data-lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Site oficial da Assembleia de Deus Pentecostal - Ministério Comunhão e Plenitude.">
+    <meta name="keywords"
+        content="igreja, evangelho, pentecostal, adp, comunhão, plenitude, pastor Ananias, cristianismo">
+    <meta name="author" content="Job Zezz">
+    <title>Home. - ADPMCP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#D4A017',
+                        accent: '#111827',
+                        light: '#F3F4F6',
+                        dark: '#1F2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1200x600');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-card:hover {
+            transform: scale(1.02);
+        }
+
+        .nav-link:hover {
+            color: #D4A017;
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp">
+        <a href="https://wa.me/244921652665"
+            class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center"
+            aria-label="Abrir conversa no WhatsApp">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-primary text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-church text-2xl text-secondary"></i>
+                <div>
+                    <h1 class="text-xl font-bold">ADPMCP</h1>
+                    <p class="text-xs">Igreja da Oração, da Palavra e da Comunhão</p>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex space-x-6">
+                <a href="/ministerios.html" class="nav-link flex items-center">
+                    <i class="fas fa-users mr-1"></i> Ministérios
+                </a>
+                <a href="/fundadores.html" class="nav-link flex items-center">
+                    <i class="fas fa-user-tie mr-1"></i> Fundadores
+                </a>
+                <a href="/cristovive.html" class="nav-link flex items-center">
+                    <i class="fas fa-cross mr-1"></i> Cruzada Evangelística
+                </a>
+                <a href="/livraria.html" class="nav-link flex items-center">
+                    <i class="fas fa-book mr-1"></i> Livraria
+                </a>
+                <a href="/projetos.html" class="nav-link flex items-center">
+                    <i class="fas fa-hands-helping mr-1"></i> Projectos Sociais
+                </a>
+            </nav>
+
+            <button id="mobileMenuBtn" class="md:hidden text-white focus:outline-none" aria-label="Abrir menu mobile">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav id="mobileMenu"
+        class="md:hidden fixed top-0 left-0 w-full h-full bg-primary bg-opacity-95 text-white px-4 py-8 z-50 hidden transition-all duration-300">
+        <div class="flex justify-between items-center mb-8">
+            <span class="text-xl font-bold">Menu</span>
+            <button id="closeMobileMenu" class="text-white text-3xl focus:outline-none" aria-label="Fechar menu mobile">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <a href="/ministerios.html" class="block py-3 nav-link flex items-center text-lg">
+            <i class="fas fa-users mr-2"></i> Ministérios
+        </a>
+        <a href="/fundadores.html" class="block py-3 nav-link flex items-center text-lg">
+            <i class="fas fa-user-tie mr-2"></i> Fundadores
+        </a>
+        <a href="/cristovive.html" class="block py-3 nav-link flex items-center text-lg">
+            <i class="fas fa-cross mr-2"></i> Cruzada Evangelística
+        </a>
+        <a href="/livraria.html" class="block py-3 nav-link flex items-center text-lg">
+            <i class="fas fa-book mr-2"></i> Livraria
+        </a>
+        <a href="/projetos.html" class="block py-3 nav-link flex items-center text-lg">
+            <i class="fas fa-hands-helping mr-2"></i> Projectos Sociais
+        </a>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeBtn = document.getElementById('closeMobileMenu');
+
+            menuBtn.addEventListener('click', function () {
+                mobileMenu.classList.remove('hidden');
+            });
+
+            closeBtn.addEventListener('click', function () {
+                mobileMenu.classList.add('hidden');
+            });
+
+            mobileMenu.addEventListener('click', function (e) {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+    <body class="font-sans bg-gray-50">
+        <!-- Floating WhatsApp Button -->
+        <div class="floating-whatsapp">
+            <a href="https://wa.me/244921652665"
+                class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center">
+                <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
+        </div>
+
+        <body class="font-sans bg-gray-50">
+
+            <!-- Header -->
+            <header class="bg-primary text-white shadow-md">
+                <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-hands-helping text-2xl text-secondary"></i>
+                        <div>
+                            <h1 class="text-xl font-bold">ADPMCP</h1>
+                            <p class="text-xs">Projectos Sociais de Esperança</p>
+                        </div>
+                    </div>
+                    <a href="#doar"
+                        class="bg-secondary text-dark font-bold py-2 px-6 rounded-full hover:bg-yellow-600 transition cta-btn">Quero
+                        Doar</a>
+                </div>
+            </header>
+
+            <!-- Hero Section -->
+            <section class="hero-bg text-white py-20 md:py-32">
+                <div class="container mx-auto px-4 text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">Transforme Vidas com Sua Doação</h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-secondary">Ajude a construir esperança!</h2>
+                    <p class="text-xl mb-8 max-w-2xl mx-auto">Sua contribuição faz a diferença na construção e
+                        manutenção de
+                        centros de apoio, educação, saúde e comunicação cristã. Junte-se a nós!</p>
+                    <a href="#doar"
+                        class="bg-secondary hover:bg-yellow-600 text-dark font-bold py-4 px-10 rounded-full transition duration-300 text-xl cta-btn">
+                        Doe Agora
+                    </a>
+                </div>
+            </section>
+
+            <!-- Social Projects Section -->
+            <section class="py-16 bg-white" id="projetos">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-primary">Nossos Projectos Sociais</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Project 1 (Cesta Básica e Natal Solidário) -->
+                        <div class="bg-light rounded-lg shadow-md p-6 flex flex-col">
+                            <i class="fas fa-box text-4xl text-secondary mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2 text-dark">Cesta Básica e Natal Solidário</h3>
+                            <p class="text-gray-700 mb-4">A Cesta Básica é para ajudar de forma periódica famílias
+                                carenciadas.
+                                Natal Solidário é focado exclusivamente em doar necessidades pontuais durante a quadra
+                                festiva.
+                            </p>
+                        </div>
+                        <!-- Project 2 -->
+                        <div class="bg-light rounded-lg shadow-md p-6 flex flex-col">
+                            <i class="fas fa-hospital-alt text-4xl text-secondary mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2 text-dark">Centro de Reabilitação</h3>
+                            <p class="text-gray-700 mb-4">Construção de um espaço para recuperação e reintegração social
+                                de
+                                dependentes e pessoas em situação de vulnerabilidade.</p>
+                        </div>
+                        <!-- Project 3 -->
+                        <div class="bg-light rounded-lg shadow-md p-6 flex flex-col">
+                            <i class="fas fa-child text-4xl text-secondary mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2 text-dark">Centro de Acolhimento Infantil</h3>
+                            <p class="text-gray-700 mb-4">Oferecer abrigo, alimentação e educação para crianças em risco
+                                social.
+                            </p>
+                        </div>
+                        <!-- Project 4 -->
+                        <div class="bg-light rounded-lg shadow-md p-6 flex flex-col">
+                            <i class="fas fa-users text-4xl text-secondary mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2 text-dark">Centro de Acolhimento de Famílias</h3>
+                            <p class="text-gray-700 mb-4">Acolhimento e assistência a famílias carenciadas, promovendo
+                                dignidade
+                                e esperança.</p>
+                        </div>
+                        <!-- Project 5 -->
+                        <div class="bg-light rounded-lg shadow-md p-6 flex flex-col">
+                            <i class="fas fa-school text-4xl text-secondary mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2 text-dark">Escola Primária e Secundária</h3>
+                            <p class="text-gray-700 mb-4">Construção de escola para garantir educação de qualidade para
+                                crianças
+                                e adolescentes.</p>
+                        </div>
+                        <!-- Project 6 -->
+                        <div class="bg-light rounded-lg shadow-md p-6 flex flex-col">
+                            <i class="fas fa-university text-4xl text-secondary mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2 text-dark">Faculdade</h3>
+                            <p class="text-gray-700 mb-4">Projeto para formação superior, ampliando oportunidades para
+                                jovens e
+                                adultos.</p>
+                        </div>
+                        <!-- Project 7 -->
+                        <div class="bg-light rounded-lg shadow-md p-6 flex flex-col">
+                            <i class="fas fa-hand-holding-heart text-4xl text-secondary mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2 text-dark">Visitas e Assistências</h3>
+                            <p class="text-gray-700 mb-4">Ações de apoio espiritual e material em prisões e hospitais.
+                            </p>
+                        </div>
+                        <!-- Project 8 -->
+                        <div class="bg-light rounded-lg shadow-md p-6 flex flex-col">
+                            <i class="fas fa-broadcast-tower text-4xl text-secondary mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2 text-dark">Estação de Rádio e TV Evangélica</h3>
+                            <p class="text-gray-700 mb-4">Construção de meios de comunicação para evangelização e
+                                educação
+                                cristã.</p>
+                        </div>
+                    </div>
+            </section>
+
+            <!-- Donation Section -->
+            <section id="doar" class="py-16 bg-primary text-white">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl font-bold text-center mb-8">Como Contribuir</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        <!-- Buy Me a Coffee -->
+                        <div
+                            class="bg-white text-dark rounded-lg shadow-lg p-6 donation-card flex flex-col items-center">
+                            <i class="fas fa-mug-hot text-4xl text-secondary mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Doação Online</h3>
+                            <p class="text-gray-700 mb-6 text-center">Contribua de forma rápida e segura pelo Buy Me a
+                                Coffee.
+                            </p>
+                            <a href="https://buymeacoffee.com/adpmcp" target="_blank"
+                                class="bg-secondary hover:bg-yellow-600 text-dark font-bold py-3 px-6 rounded-full transition duration-300 flex items-center cta-btn">
+                                <i class="fas fa-mug-hot mr-2"></i> Doar Agora
+                            </a>
+                        </div>
+                        <!-- Transferência Bancária Angola -->
+                        <div
+                            class="bg-white text-dark rounded-lg shadow-lg p-6 donation-card flex flex-col items-center">
+                            <i class="fas fa-university text-4xl text-secondary mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Transferência Bancária (Angola)</h3>
+                            <p class="text-gray-700 mb-4 text-center">Faça sua oferta ou doação diretamente para nossa
+                                conta:
+                            </p>
+                            <div class="mb-2">
+                                <span class="font-semibold">Banco:</span> Banco de Fomento Angola<br>
+                                <span class="font-semibold">Titular:</span> Assembleia de Deus Pentecostal Centro
+                                Filadelfia
+                                Lub<br>
+                                <span class="font-semibold">IBAN:</span> AO06 0006 0000 0385 5072 3014 1
+                            </div>
+                        </div>
+                        <!-- Pix Brasil -->
+                        <div
+                            class="bg-white text-dark rounded-lg shadow-lg p-6 donation-card flex flex-col items-center">
+                            <i class="fas fa-qrcode text-4xl text-secondary mb-4"></i>
+                            <h3 class="text-xl font-bold mb-2">Pix (Brasil)</h3>
+                            <p class="text-gray-700 mb-4 text-center">Para doações do Brasil, utilize o Pix:</p>
+                            <div class="mb-2">
+                                <span class="font-semibold">Chave Pix:</span> adpmcpbrasil@gmail.com
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-10">
+                        <a href="#projetos"
+                            class="bg-white text-primary font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition duration-300">Conheça
+                            os Projectos</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="bg-dark text-white py-8">
+                <div class="container mx-auto px-4 text-center">
+                    <p class="mb-2">&copy; 2025 ADP Ministério Comunhão e Plenitude. Todos os direitos reservados.</p>
+                    <p>Juntos, construindo esperança e transformando vidas!</p>
+                </div>
+            </footer>
+        </body>
+
+</html>
