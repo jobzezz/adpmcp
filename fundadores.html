@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt" data-lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Site oficial da Assembleia de Deus Pentecostal - Ministério Comunhão e Plenitude.">
+    <meta name="keywords"
+        content="igreja, evangelho, pentecostal, adp, comunhão, plenitude, pastor Ananias, cristianismo">
+    <meta name="author" content="Job Zezz">
+    <title>Fundadores ADPMCP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A',
+                        secondary: '#D4A017',
+                        accent: '#111827',
+                        light: '#F3F4F6',
+                        dark: '#1F2937'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1200x600');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-card:hover {
+            transform: scale(1.02);
+        }
+
+        .nav-link:hover {
+            color: #D4A017;
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp">
+        <a href="https://wa.me/244921652665"
+            class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center"
+            aria-label="Abrir conversa no WhatsApp">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-primary text-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-church text-2xl text-secondary"></i>
+                <div>
+                    <h1 class="text-xl font-bold">FUNDADORES - ADPMCP</h1>
+                    <p class="text-xs">Conheça Fundadores</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="/index.html" class="nav-link flex items-center">
+                    <i class="fas fa-home mr-1"></i> Início
+                </a>
+                <a href="/ministerios.html" class="nav-link flex items-center">
+                    <i class="fas fa-users mr-1"></i> Ministérios
+                </a>
+                <a href="/fundadores.html" class="nav-link flex items-center">
+                    <i class="fas fa-user-tie mr-1"></i> Fundadores
+                </a>
+                <a href="/cristovive.html" class="nav-link flex items-center">
+                    <i class="fas fa-cross mr-1"></i> Cruzada Evangelística
+                </a>
+                <a href="/livraria.html" class="nav-link flex items-center">
+                    <i class="fas fa-book mr-1"></i> Livraria
+                </a>
+                <a href="/projetos.html" class="nav-link flex items-center">
+                    <i class="fas fa-hands-helping mr-1"></i> Projectos Sociais
+                </a>
+            </nav>
+
+            <button id="mobileMenuBtn" class="md:hidden text-white focus:outline-none" aria-label="Abrir menu mobile">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav id="mobileMenu"
+        class="md:hidden fixed top-0 left-0 w-full h-full bg-primary bg-opacity-95 text-white px-4 py-8 z-50 hidden transition-all duration-300">
+        <div class="flex justify-between items-center mb-8">
+            <span class="text-xl font-bold">Menu</span>
+            <button id="closeMobileMenu" class="text-white text-3xl focus:outline-none" aria-label="Fechar menu mobile">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <a href="/index.html" class="nav-link flex items-center">
+            <i class="fas fa-home mr-1"></i> Início
+        </a>
+        <a href="/ministerios.html" class="block py-3 nav-link flex items-center text-lg">
+            <i class="fas fa-users mr-2"></i> Ministérios
+        </a>
+        <a href="/fundadores.html" class="block py-3 nav-link flex items-center text-lg">
+            <i class="fas fa-user-tie mr-2"></i> Fundadores
+        </a>
+        <a href="/cristovive.html" class="block py-3 nav-link flex items-center text-lg">
+            <i class="fas fa-cross mr-2"></i> Cruzada Evangelística
+        </a>
+        <a href="/livraria.html" class="block py-3 nav-link flex items-center text-lg">
+            <i class="fas fa-book mr-2"></i> Livraria
+        </a>
+        <a href="/projetos.html" class="block py-3 nav-link flex items-center text-lg">
+            <i class="fas fa-hands-helping mr-2"></i> Projectos Sociais
+        </a>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeBtn = document.getElementById('closeMobileMenu');
+
+            menuBtn.addEventListener('click', function () {
+                mobileMenu.classList.remove('hidden');
+            });
+
+            closeBtn.addEventListener('click', function () {
+                mobileMenu.classList.add('hidden');
+            });
+
+            mobileMenu.addEventListener('click', function (e) {
+                if (e.target === mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+
+    <body class="font-sans bg-gray-50">
+        <!-- Floating WhatsApp Button -->
+        <div class="floating-whatsapp">
+            <a href="https://wa.me/244921652665"
+                class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center">
+                <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
+        </div>
+
+        <!-- Seção: Fundadores -->
+        <section id="fundadores" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-primary mb-10">Fundadores</h2>
+
+                <div class="bg-light rounded-lg shadow-lg p-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Texto -->
+                        <div>
+                            <h3 class="text-2xl font-semibold text-secondary mb-4">
+                                Reverendo Ananias Alberto & Diaconisa Laurinda Alberto
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                Pastores Presidente. A história começou em 2001 como Ponto de Pregação da ADP Ministério
+                                Kilamba
+                                Kiaxi, iniciado na casa de um dos membros em Lubango, Angola. Obedeceu ao processo de
+                                transição e
+                                crescimento, recebendo autonomia aos <strong>8 de Maio de 2021</strong>, passando a
+                                Ministério
+                                Comunhão e Plenitude, baseado em <em>Atos 2:42</em> e <em>Apocalipse 1:8</em>.
+                            </p>
+                            <p class="text-gray-700 leading-relaxed mb-4">
+                                Hoje, o ministério conta com mais de <strong>24 filiais</strong> e é liderado pelo seu
+                                fundador
+                                <strong>Rev. Ananias Alberto</strong> (autor dos livros <em>Filhos de Honra</em> e
+                                <em>Manual de Instrução para um Casamento Feliz</em>) e sua esposa <strong>Diaconisa
+                                    Laurinda
+                                    Alberto</strong> (Diretora do Departamento Filhas de Sara).
+                            </p>
+                            <p class="text-gray-700">
+                                <strong>Sede (Matriz):</strong> Bairro Casa-Verde, por detrás do condomínio Mapunda
+                                Residence.
+                            </p>
+                        </div>
+
+                        <!-- Imagem -->
+                        <div class="relative w-full h-64 bg-gray-200 rounded-lg overflow-hidden">
+                            <img src="https://example.com/fundadores.jpg" alt="Fundadores"
+                                class="object-cover w-full h-full">
+                        </div>
+                    </div>
+        </section>
+
+        <!-- Seção: Direção Geral -->
+        <section id="direcao-geral" class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-primary mb-10">Direção Geral</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Vice-Presidente: Pastor Inácio Liunto -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <img src="https://example.com/vice-presidente.jpg" alt="Pastor Inácio Liunto"
+                                class="object-cover w-full h-full rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Vice-Presidente</h3>
+                        <p class="text-gray-700 font-bold mb-4">Pastor Inácio Liunto</p>
+                        <p class="text-gray-700">Breve descrição sobre o Pastor Inácio Liunto. Ele desempenha um papel
+                            importante na coordenação das atividades da igreja e está envolvido diretamente em várias
+                            ações ministeriais.</p>
+                    </div>
+
+                    <!-- Secretário Geral: Pastor Adão Zamba -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <img src="https://example.com/secretario-geral.jpg" alt="Pastor Adão Zamba"
+                                class="object-cover w-full h-full rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Secretário Geral</h3>
+                        <p class="text-gray-700 font-bold mb-4">Pastor Adão Zamba</p>
+                        <p class="text-gray-700">Descrição do Pastor Adão Zamba. Ele é responsável pela organização
+                            administrativa e pela comunicação interna da igreja, além de supervisionar as atividades
+                            relacionadas à gestão de eventos.</p>
+                    </div>
+
+                    <!-- Tesoureiro Geral: Ev. Daniel Capewa -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <img src="https://example.com/tesoureiro.jpg" alt="Evangelista Daniel Capewa"
+                                class="object-cover w-full h-full rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Tesoureiro Geral</h3>
+                        <p class="text-gray-700 font-bold mb-4">Ev. Daniel Capewa</p>
+                        <p class="text-gray-700">Evangelista Daniel Capewa gerencia as finanças da igreja, sendo
+                            responsável pela arrecadação, distribuição e controle dos recursos. Ele também supervisiona
+                            o orçamento e as despesas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção: Diretores de Departamento -->
+        <section id="diretores-departamento" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-primary mb-10">Diretores de Departamento</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Diretor de Crianças: Coop. Morena Sabalo -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <img src="https://example.com/diretor-criancas.jpg" alt="Coop. Morena Sabalo"
+                                class="object-cover w-full h-full rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Diretor de Crianças</h3>
+                        <p class="text-gray-700 font-bold mb-4">Coop. Morena Sabalo</p>
+                        <p class="text-gray-700">Descrição da Coop. Morena Sabalo, responsável pelo ministério infantil,
+                            que visa ensinar e guiar as crianças nos caminhos da fé cristã com atividades e eventos
+                            educativos.</p>
+                    </div>
+
+                    <!-- Diretor de Adolescentes: Coop. Silas Alberto -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <img src="https://example.com/diretor-adolescentes.jpg" alt="Coop. Silas Alberto"
+                                class="object-cover w-full h-full rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Diretor de Adolescentes</h3>
+                        <p class="text-gray-700 font-bold mb-4">Coop. Silas Alberto</p>
+                        <p class="text-gray-700">Coop. Silas Alberto lidera o ministério de adolescentes, coordenando as
+                            atividades para jovens, proporcionando um ambiente saudável para o crescimento espiritual
+                            dessa faixa etária.</p>
+                    </div>
+
+                    <!-- Diretor da Juventude: Ev. Ramiro Dumbo -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <img src="https://example.com/diretor-juventude.jpg" alt="Ev. Ramiro Dumbo"
+                                class="object-cover w-full h-full rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Diretor da Juventude</h3>
+                        <p class="text-gray-700 font-bold mb-4">Ev. Ramiro Dumbo</p>
+                        <p class="text-gray-700">Ev. Ramiro Dumbo lidera a juventude da igreja, incentivando a
+                            participação ativa dos jovens nas atividades ministeriais e criando um ambiente de
+                            crescimento espiritual e social.</p>
+                    </div>
+
+                    <!-- Diretor de Filhos de Abraão: Coop. Carlos Napoleão -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <img src="https://example.com/diretor-filhos-de-abraao.jpg" alt="Coop. Carlos Napoleão"
+                                class="object-cover w-full h-full rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Diretor de Filhos de Abraão</h3>
+                        <p class="text-gray-700 font-bold mb-4">Coop. Carlos Napoleão</p>
+                        <p class="text-gray-700">Coop. Carlos Napoleão lidera o ministério Filhos de Abraão, que foca no
+                            fortalecimento da fé entre os membros mais velhos da igreja, transmitindo sabedoria e
+                            valores cristãos.</p>
+                    </div>
+
+                    <!-- Diretora de Filhas de Sara: Diac. Laurinda Alberto -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <img src="https://example.com/diretora-filhas-de-sara.jpg" alt="Diac. Laurinda Alberto"
+                                class="object-cover w-full h-full rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Diretora de Filhas de Sara</h3>
+                        <p class="text-gray-700 font-bold mb-4">Diac. Laurinda Alberto</p>
+                        <p class="text-gray-700">Diac. Laurinda Alberto lidera o ministério Filhas de Sara, focando no
+                            empoderamento e no crescimento espiritual das mulheres dentro da igreja, com ações de
+                            liderança e discipulado.</p>
+                    </div>
+
+                    <!-- Diretor da DCIM: Coop. Job Zezz (Zeferino) -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <img src="https://example.com/diretor-dcim.jpg" alt="Coop. Job Zezz"
+                                class="object-cover w-full h-full rounded-full">
+                        </div>
+                        <h3 class="text-xl font-semibold text-secondary mb-2">Diretor da DCIM</h3>
+                        <p class="text-gray-700 font-bold mb-4">Coop. Job Zezz (Zeferino)</p>
+                        <p class="text-gray-700">Coop. Job Zezz (Zeferino) lidera a DCIM, o Departamento de Comunicação
+                            e Imprensa da igreja, sendo responsável pela divulgação das atividades e mensagens através
+                            de várias plataformas.</p>
+                    </div>
+                </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-8">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-secondary">Assembleia de Deus Pentecostal</h3>
+                        <p class="mb-4">Ministério Comunhão e Plenitude</p>
+                        <p>"A igreja da oração, da palavra e da comunhão"</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-secondary">Links Rápidos</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#inicio" class="hover:text-secondary transition">Início</a></li>
+                            <li><a href="#ministerios" class="hover:text-secondary transition">Ministérios</a></li>
+                            <li><a href="#cruzada" class="hover:text-secondary transition">Cruzada Cristo Vive</a></li>
+                            <li><a href="#projetos" class="hover:text-secondary transition">Projectos Sociais</a></li>
+                            <li><a href="#doacoes" class="hover:text-secondary transition">Contribuir</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-secondary">Horário de Funcionamento</h3>
+                        <p class="mb-2">Segunda a Sexta: 8h00 - 18h00</p>
+                        <p>Sábado e Domingo: De acordo com agenda de cultos</p>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-700 mt-8 pt-6 text-center">
+                    <p>&copy; COPYRIGHT © 2025 Todos os direitos reservados a ADP Ministério Comunhão e Plenitude.
+                        Desenvolvido por Job Zezz</p>
+                </div>
+            </div>
+        </footer>
+
+    </body>
+
+</html>
