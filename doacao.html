@@ -32,10 +32,9 @@
             <!-- Header -->
             <div class="bg-blue-700 py-6 px-6 text-center">
                 <h1 class="text-3xl font-bold text-white animate-pulse">
-                    <i class="fas fa-church mr-2"></i>Seja Parceiro ou Faça uma Doação
+                    <i class="fas fa-church mr-2"></i> APOIE O NOSSO MINISTÉRIO
                 </h1>
-                <p class="text-blue-100 mt-2">"Cada um contribua segundo propôs no seu coração..." (2 Coríntios 9:7);  o propósito é ganhar almas para Jesus, libertação, cura e milagres. Desde a sua fundação em 2001 tem ganhando notoriedade na expansão do Evangelho desde a Região sul de Angola hoje conta com mais de 25 congegrações e subcongregação, nas províncias da Huíla, Cunene.
-Faça uma doação para podermos levar a mesma a outras cidades, municipios e países. IBAN: 0006 0000 0385 5072 3014 1 - ADP CENTRO FILADÉLFIA LUBANGO</p>
+                <p class="text-blue-100 mt-2">"Cada um contribua segundo propôs no seu coração..." (2 Coríntios 9:7) o propósito é ganhar almas para Jesus, libertação, cura e milagres. Coordenadas Angola (IBAN: 0006 0000 0385 5072 3014 1 - ADP CENTRO FILADÉLFIA LUBANGO)</p>
             </div>
 
             <!-- Form -->
@@ -49,7 +48,17 @@ Faça uma doação para podermos levar a mesma a outras cidades, municipios e pa
 
                     <div class="space-y-2">
                         <label class="block text-gray-700 font-medium">Telefone</label>
-                        <input type="tel" id="phone" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="+244..." required>
+                        <div class="flex">
+                            <select id="countryCode" class="w-24 px-2 py-2 border rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="+244">+244 (Angola)</option>
+                                <option value="+55">+55 (Brasil)</option>
+                                <option value="+351">+351 (Portugal)</option>
+                                <option value="+1">+1 (EUA/Canadá)</option>
+                                <option value="+258">+258 (Moçambique)</option>
+                                <option value="other">Outro</option>
+                            </select>
+                            <input type="tel" id="phone" class="flex-1 px-4 py-2 border-t border-r border-b rounded-r-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Número" required>
+                        </div>
                     </div>
 
                     <!-- Tipo de Contribuição -->
@@ -76,13 +85,28 @@ Faça uma doação para podermos levar a mesma a outras cidades, municipios e pa
                                 <input type="radio" id="crusade" name="donationType" value="Cruzada Evangelística Cristo Vive" class="h-5 w-5 text-blue-600">
                                 <label for="crusade" class="ml-2 block text-gray-700"><i class="fas fa-cross mr-1"></i> Cruzada Cristo Vive</label>
                             </div>
+                            <div class="flex items-center">
+                                <input type="radio" id="communication" name="donationType" value="Comunicação e Imagem" class="h-5 w-5 text-blue-600">
+                                <label for="communication" class="ml-2 block text-gray-700"><i class="fas fa-bullhorn mr-1"></i> Comunicação e Imagem</label>
+                            </div>
                         </div>
                     </div>
 
                     <!-- Valor -->
                     <div class="space-y-2">
-                        <label class="block text-gray-700 font-medium">Valor (Kz)</label>
-                        <input type="number" id="amount" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="1000" required>
+                        <label class="block text-gray-700 font-medium">Valor</label>
+                        <div class="flex items-center space-x-2">
+                            <input type="number" id="amount" class="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="1000" required>
+                            <select id="currency" class="px-2 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="Kz">Kz</option>
+                                <option value="USD">USD</option>
+                                <option value="PIX">PIX</option>
+                            </select>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">
+                            <span id="currencyInfo">Para USD: <a href="https://buymeacoffee.com/adpmcponline" target="_blank" class="text-blue-600 hover:underline">buymeacoffee.com/adpmcponline</a></span>
+                            <span id="pixInfo" class="hidden">Chave PIX: <span class="font-semibold">contacto@adpmcp.org</span></span>
+                        </p>
                     </div>
 
                     <!-- Data -->
@@ -156,15 +180,38 @@ Faça uma doação para podermos levar a mesma a outras cidades, municipios e pa
                 }
             });
 
+            // Currency selection handler
+            const currencySelect = document.getElementById('currency');
+            const currencyInfo = document.getElementById('currencyInfo');
+            const pixInfo = document.getElementById('pixInfo');
+
+            currencySelect.addEventListener('change', function() {
+                if (this.value === 'PIX') {
+                    currencyInfo.classList.add('hidden');
+                    pixInfo.classList.remove('hidden');
+                } else if (this.value === 'USD') {
+                    currencyInfo.classList.remove('hidden');
+                    pixInfo.classList.add('hidden');
+                    currencyInfo.innerHTML = 'Para USD: <a href="https://buymeacoffee.com/adpmcponline" target="_blank" class="text-blue-600 hover:underline">buymeacoffee.com/adpmcponline</a>';
+                } else {
+                    currencyInfo.classList.add('hidden');
+                    pixInfo.classList.add('hidden');
+                }
+            });
+
             // Form submission
             const form = document.getElementById('donationForm');
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
                 const name = document.getElementById('name').value;
-                const phone = document.getElementById('phone').value;
+                const countryCode = document.getElementById('countryCode').value;
+                const phoneNumber = document.getElementById('phone').value;
+                const phone = countryCode === 'other' ? phoneNumber : `${countryCode}${phoneNumber}`;
+                const email = document.getElementById('email').value;
                 const donationType = document.querySelector('input[name="donationType"]:checked').value;
                 const amount = document.getElementById('amount').value;
+                const currency = document.getElementById('currency').value;
                 const date = document.getElementById('date').value;
                 const message = document.getElementById('message').value;
                 const receipt = receiptInput.files[0];
@@ -173,8 +220,16 @@ Faça uma doação para podermos levar a mesma a outras cidades, municipios e pa
                 let whatsappMessage = `*Nova Contribuição*\n\n`;
                 whatsappMessage += `*Nome:* ${name}\n`;
                 whatsappMessage += `*Telefone:* ${phone}\n`;
+                if (email) {
+                    whatsappMessage += `*Email:* ${email}\n`;
+                }
                 whatsappMessage += `*Tipo:* ${donationType}\n`;
-                whatsappMessage += `*Valor:* ${amount} Kz\n`;
+                whatsappMessage += `*Valor:* ${amount} ${currency}\n`;
+                if (currency === 'PIX') {
+                    whatsappMessage += `*Chave PIX:* contacto@adpmcp.org\n`;
+                } else if (currency === 'USD') {
+                    whatsappMessage += `*Link para doação em USD:* https://buymeacoffee.com/adpmcponline\n`;
+                }
                 whatsappMessage += `*Data:* ${date}\n`;
                 if (message) {
                     whatsappMessage += `*Mensagem:* ${message}\n`;
