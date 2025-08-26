@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,16 +17,27 @@
             padding: 5px;
             border-radius: 5px;
         }
+
         .animate-pulse {
             animation: pulse 2s infinite;
         }
+
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
+
 <body class="bg-gray-100 min-h-screen">
     <div class="container mx-auto px-4 py-8">
         <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
@@ -34,7 +46,9 @@
                 <h1 class="text-3xl font-bold text-white animate-pulse">
                     <i class="fas fa-church mr-2"></i> SEJA NOSSO PARCEIRO
                 </h1>
-                <p class="text-blue-100 mt-2">"Cada um contribua segundo propôs no seu coração..." (2 Coríntios 9:7) o propósito é ganhar almas para Jesus, libertação, cura e milagres. Coordenadas Angola (IBAN: 0006 0000 0385 5072 3014 1 - ADP CENTRO FILADÉLFIA LUBANGO)</p>
+                <p class="text-blue-100 mt-2">"Cada um contribua segundo propôs no seu coração..." (2 Coríntios 9:7) o
+                    propósito é ganhar almas para Jesus, libertação, cura e milagres. Coordenadas Angola (IBAN: 0006
+                    0000 0385 5072 3014 1 - ADP CENTRO FILADÉLFIA LUBANGO)</p>
             </div>
 
             <!-- Form -->
@@ -43,13 +57,23 @@
                     <!-- Doador Info -->
                     <div class="space-y-2">
                         <label class="block text-gray-700 font-medium">Seu Nome</label>
-                        <input type="text" id="name" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Nome completo" required>
+                        <input type="text" id="name"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Nome completo" required>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-gray-700 font-medium">Email (Opcional)</label>
+                        <input type="email" id="email"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Seu email">
                     </div>
 
                     <div class="space-y-2">
                         <label class="block text-gray-700 font-medium">Telefone</label>
                         <div class="flex">
-                            <select id="countryCode" class="w-24 px-2 py-2 border rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <select id="countryCode"
+                                class="w-24 px-2 py-2 border rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                 <option value="+244">+244 (Angola)</option>
                                 <option value="+55">+55 (Brasil)</option>
                                 <option value="+351">+351 (Portugal)</option>
@@ -57,7 +81,9 @@
                                 <option value="+258">+258 (Moçambique)</option>
                                 <option value="other">Outro</option>
                             </select>
-                            <input type="tel" id="phone" class="flex-1 px-4 py-2 border-t border-r border-b rounded-r-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Número" required>
+                            <input type="tel" id="phone"
+                                class="flex-1 px-4 py-2 border-t border-r border-b rounded-r-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="Número" required>
                         </div>
                     </div>
 
@@ -66,28 +92,40 @@
                         <label class="block text-gray-700 font-medium">Tipo de Contribuição</label>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="flex items-center">
-                                <input type="radio" id="tithe" name="donationType" value="Dízimo" class="h-5 w-5 text-blue-600" checked>
-                                <label for="tithe" class="ml-2 block text-gray-700"><i class="fas fa-hand-holding-usd mr-1"></i> Dízimo</label>
+                                <input type="radio" id="tithe" name="donationType" value="Dízimo"
+                                    class="h-5 w-5 text-blue-600" checked>
+                                <label for="tithe" class="ml-2 block text-gray-700"><i
+                                        class="fas fa-hand-holding-usd mr-1"></i> Dízimo</label>
                             </div>
                             <div class="flex items-center">
-                                <input type="radio" id="offering" name="donationType" value="Oferta" class="h-5 w-5 text-blue-600">
-                                <label for="offering" class="ml-2 block text-gray-700"><i class="fas fa-gift mr-1"></i> Oferta</label>
+                                <input type="radio" id="offering" name="donationType" value="Oferta"
+                                    class="h-5 w-5 text-blue-600">
+                                <label for="offering" class="ml-2 block text-gray-700"><i class="fas fa-gift mr-1"></i>
+                                    Oferta</label>
                             </div>
                             <div class="flex items-center">
-                                <input type="radio" id="maintenance" name="donationType" value="Manutenção e abertura de Templo" class="h-5 w-5 text-blue-600">
-                                <label for="maintenance" class="ml-2 block text-gray-700"><i class="fas fa-tools mr-1"></i> Manutenção do Templo</label>
+                                <input type="radio" id="maintenance" name="donationType"
+                                    value="Manutenção e abertura de Templo" class="h-5 w-5 text-blue-600">
+                                <label for="maintenance" class="ml-2 block text-gray-700"><i
+                                        class="fas fa-tools mr-1"></i> Manutenção do Templo</label>
                             </div>
                             <div class="flex items-center">
-                                <input type="radio" id="evangelism" name="donationType" value="Evangelismo e Missões" class="h-5 w-5 text-blue-600">
-                                <label for="evangelism" class="ml-2 block text-gray-700"><i class="fas fa-globe-africa mr-1"></i> Evangelismo e Missões</label>
+                                <input type="radio" id="evangelism" name="donationType" value="Evangelismo e Missões"
+                                    class="h-5 w-5 text-blue-600">
+                                <label for="evangelism" class="ml-2 block text-gray-700"><i
+                                        class="fas fa-globe-africa mr-1"></i> Evangelismo e Missões</label>
                             </div>
                             <div class="flex items-center">
-                                <input type="radio" id="crusade" name="donationType" value="Cruzada Evangelística Cristo Vive" class="h-5 w-5 text-blue-600">
-                                <label for="crusade" class="ml-2 block text-gray-700"><i class="fas fa-cross mr-1"></i> Cruzada Cristo Vive</label>
+                                <input type="radio" id="crusade" name="donationType"
+                                    value="Cruzada Evangelística Cristo Vive" class="h-5 w-5 text-blue-600">
+                                <label for="crusade" class="ml-2 block text-gray-700"><i class="fas fa-cross mr-1"></i>
+                                    Cruzada Cristo Vive</label>
                             </div>
                             <div class="flex items-center">
-                                <input type="radio" id="communication" name="donationType" value="Comunicação e Imagem" class="h-5 w-5 text-blue-600">
-                                <label for="communication" class="ml-2 block text-gray-700"><i class="fas fa-bullhorn mr-1"></i> Comunicação e Imagem</label>
+                                <input type="radio" id="communication" name="donationType" value="Comunicação e Imagem"
+                                    class="h-5 w-5 text-blue-600">
+                                <label for="communication" class="ml-2 block text-gray-700"><i
+                                        class="fas fa-bullhorn mr-1"></i> Comunicação e Imagem</label>
                             </div>
                         </div>
                     </div>
@@ -96,33 +134,43 @@
                     <div class="space-y-2">
                         <label class="block text-gray-700 font-medium">Valor</label>
                         <div class="flex items-center space-x-2">
-                            <input type="number" id="amount" class="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="1000" required>
-                            <select id="currency" class="px-2 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <input type="number" id="amount"
+                                class="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="1000" required>
+                            <select id="currency"
+                                class="px-2 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                                 <option value="Kz">Kz</option>
                                 <option value="USD">USD</option>
                                 <option value="PIX">PIX</option>
                             </select>
                         </div>
                         <p class="text-xs text-gray-500 mt-1">
-                            <span id="currencyInfo">Para USD Clica aqui: <a href="https://buymeacoffee.com/adpmcponline" target="_blank" class="text-blue-600 hover:underline">buymeacoffee.com/adpmcponline</a></span>
-                            <span id="pixInfo" class="hidden">Chave PIX: <span class="font-semibold">contacto@adpmcp.org</span></span>
+                            <span id="currencyInfo">Para USD Clica aqui: <a href="https://buymeacoffee.com/adpmcponline"
+                                    target="_blank"
+                                    class="text-blue-600 hover:underline">buymeacoffee.com/adpmcponline</a></span>
+                            <span id="pixInfo" class="hidden">Chave PIX: <span
+                                    class="font-semibold">contacto@adpmcp.org</span></span>
                         </p>
                     </div>
 
                     <!-- Data -->
                     <div class="space-y-2">
                         <label class="block text-gray-700 font-medium">Data</label>
-                        <input type="date" id="date" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" required>
+                        <input type="date" id="date"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            required>
                     </div>
 
                     <!-- Comprovativo -->
                     <div class="space-y-2">
                         <label class="block text-gray-700 font-medium">Comprovativo de Transferência</label>
                         <div class="flex items-center justify-center w-full">
-                            <label for="receipt" class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                            <label for="receipt"
+                                class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
                                 <div class="flex flex-col items-center justify-center pt-5 pb-6">
                                     <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2"></i>
-                                    <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Clique para enviar</span> ou arraste o arquivo</p>
+                                    <p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Clique para
+                                            enviar</span> ou arraste o arquivo</p>
                                     <p class="text-xs text-gray-500">PNG, JPG ou PDF (MAX. 5MB)</p>
                                 </div>
                                 <input id="receipt" type="file" class="hidden" accept="image/*,.pdf" />
@@ -134,12 +182,15 @@
                     <!-- Mensagem -->
                     <div class="space-y-2">
                         <label class="block text-gray-700 font-medium">Mensagem (Opcional)</label>
-                        <textarea id="message" rows="3" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Deixe uma mensagem ou pedido de oração..."></textarea>
+                        <textarea id="message" rows="3"
+                            class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Deixe uma mensagem ou pedido de oração..."></textarea>
                     </div>
 
                     <!-- Botão de Envio -->
                     <div class="pt-4">
-                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200 flex items-center justify-center">
+                        <button type="submit"
+                            class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-200 flex items-center justify-center">
                             <i class="fab fa-whatsapp mr-2 text-xl"></i> Enviar para WhatsApp
                         </button>
                     </div>
@@ -150,17 +201,21 @@
             <div class="bg-gray-100 px-6 py-4 text-center">
                 <p class="text-gray-600 text-sm">"Deus ama ao que dá com alegria." (2 Coríntios 9:7)</p>
                 <div class="mt-2 flex justify-center space-x-4">
-                    <a href="https://www.facebook.com/adpmcomunhaoeplenitude/" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/adpmcomunhaoeplenitude/" class="text-blue-400 hover:text-blue-600"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.youtube.com/channel/UCLqIahcNeRF7nmZrwcolR-w/" class="text-red-500 hover:text-red-700"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.tiktok.com/@tvplenitue_mcp" class="text-red-500 hover:text-red-700"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/adpmcomunhaoeplenitude/"
+                        class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/adpmcomunhaoeplenitude/"
+                        class="text-blue-400 hover:text-blue-600"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCLqIahcNeRF7nmZrwcolR-w/"
+                        class="text-red-500 hover:text-red-700"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@tvplenitue_mcp" class="text-red-500 hover:text-red-700"><i
+                            class="fab fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Set today's date as default
             const today = new Date().toISOString().split('T')[0];
             document.getElementById('date').value = today;
@@ -169,11 +224,11 @@
             const receiptInput = document.getElementById('receipt');
             const receiptPreview = document.getElementById('receiptPreview');
 
-            receiptInput.addEventListener('change', function() {
+            receiptInput.addEventListener('change', function () {
                 const file = this.files[0];
                 if (file) {
                     const reader = new FileReader();
-                    reader.onload = function(e) {
+                    reader.onload = function (e) {
                         receiptPreview.src = e.target.result;
                         receiptPreview.style.display = 'block';
                     }
@@ -186,7 +241,7 @@
             const currencyInfo = document.getElementById('currencyInfo');
             const pixInfo = document.getElementById('pixInfo');
 
-            currencySelect.addEventListener('change', function() {
+            currencySelect.addEventListener('change', function () {
                 if (this.value === 'PIX') {
                     currencyInfo.classList.add('hidden');
                     pixInfo.classList.remove('hidden');
@@ -202,9 +257,9 @@
 
             // Form submission
             const form = document.getElementById('donationForm');
-            form.addEventListener('submit', function(e) {
+            form.addEventListener('submit', function (e) {
                 e.preventDefault();
-                
+
                 const name = document.getElementById('name').value;
                 const countryCode = document.getElementById('countryCode').value;
                 const phoneNumber = document.getElementById('phone').value;
@@ -216,7 +271,7 @@
                 const date = document.getElementById('date').value;
                 const message = document.getElementById('message').value;
                 const receipt = receiptInput.files[0];
-                
+
                 // Format WhatsApp message
                 let whatsappMessage = `*Nova Contribuição*\n\n`;
                 whatsappMessage += `*Nome:* ${name}\n`;
@@ -235,22 +290,22 @@
                 if (message) {
                     whatsappMessage += `*Mensagem:* ${message}\n`;
                 }
-                
+
                 const whatsappNumber = '+244921652665';
                 let whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-                
+
                 // If there's a receipt, we need to send it separately
                 if (receipt) {
                     // First open chat with text
                     window.open(whatsappUrl, '_blank');
-                    
+
                     // Then prepare to send the file (user will need to manually attach)
                     alert('Por favor, anexe o comprovativo na conversa do WhatsApp que será aberta.');
                 } else {
                     // Just send text
                     window.open(whatsappUrl, '_blank');
                 }
-                
+
                 // Reset form
                 form.reset();
                 receiptPreview.style.display = 'none';
@@ -259,4 +314,5 @@
         });
     </script>
 </body>
+
 </html>
